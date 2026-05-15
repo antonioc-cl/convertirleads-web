@@ -4,6 +4,7 @@ import type { CollectionEntry } from 'astro:content';
 import Landing from '../../layouts/Landing.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import Analytics from '../../components/Analytics.astro';
 
 const blogFiles = import.meta.glob('../../content/blog/**/*.{md,mdx}');
 let posts: CollectionEntry<'blog'>[] = [];
@@ -45,5 +46,6 @@ if (Object.keys(blogFiles).length > 0) {
       </div>
     )}
   </section>
+  <Analytics />
   <Footer slot="footer" />
 </Landing>
