@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Landing from '../../layouts/Landing.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const blogFiles = import.meta.glob('../../content/blog/**/*.{md,mdx}');
+let posts: CollectionEntry<'blog'>[] = [];
+
+if (Object.keys(blogFiles).length > 0) {
+  posts = (await getCollection('blog')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+}
+---
+
+<Landing title="Blog — convertirLeads" description="Ideas sobre estrategia digital, marketing, diseño y producto." canonical="https://convertirleads.cl/blog/">
+  <Header slot="header" />
+  <section class="relative z-[1] mx-auto max-w-[1240px] px-6 py-20 md:px-8 md:py-28">
+    <div class="mb-12 border-b border-mist pb-8">
+      <span class="font-mono text-xs uppercase tracking-[0.18em] text-sage-deep">blog</span>
+      <h1 class="mt-6 font-serif text-[clamp(48px,6vw,84px)] leading-[0.96] tracking-[-0.025em] text-ink">Notas de campo.</h1>
+    </div>
+
+    {posts.length === 0 ? (
+      <div class="border border-mist bg-paper-warm p-10">
+        <p class="font-serif text-3xl text-ink">Próximamente.</p>
+        <p class="mt-3 max-w-prose text-ink-soft">El blog está preparado. Los primeros artículos aparecerán cuando tengan algo útil que decir.</p>
+      </div>
+    ) : (
+      <div class="grid gap-px border border-mist bg-mist md:grid-cols-2">
+        {posts.map((post) => (
+          <article class="bg-paper p-8 hover:bg-paper-warm">
+            <time class="font-mono text-[11px] tracking-[0.1em] text-stone" datetime={post.data.date.toISOString()}>
+              {post.data.date.toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </time>
+            <h2 class="mt-4 font-serif text-3xl leading-tight text-ink">
+              <a class="no-underline hover:text-sage-deep" href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </h2>
+            <p class="mt-4 text-ink-soft">{post.data.excerpt}</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              {post.data.tags.map((tag) => <span class="border border-mist px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-stone">{tag}</span>)}
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
+  </section>
+  <Footer slot="footer" />
+</Landing>

@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+}
+
+const {
+  title = 'convertirLeads — Antonio Correa · estudio digital',
+  description = 'Convierto estrategia en resultados medibles. Antonio Correa, estratega digital desde Puerto Varas, Chile.',
+  canonical = 'https://convertirleads.cl',
+} = Astro.props;
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'convertirLeads',
+  alternateName: 'Antonio Correa · convertirLeads',
+  url: 'https://convertirleads.cl',
+  email: 'quiero@convertirleads.cl',
+  founder: {
+    '@type': 'Person',
+    name: 'Antonio Correa',
+    jobTitle: 'Estratega digital',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Puerto Varas',
+      addressRegion: 'Los Lagos',
+      addressCountry: 'CL',
+    },
+  },
+  areaServed: 'Chile',
+  serviceType: ['Estrategia digital', 'Marketing digital', 'Diseño web', 'Producto digital'],
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content="https://convertirleads.cl/images/logo/convertirleads_primary_color_transparent.svg" />
+    <meta property="og:locale" content="es_CL" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://convertirleads.cl/images/logo/convertirleads_primary_color_transparent.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body class="bg-paper text-ink font-sans">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-ink focus:text-paper focus:px-4 focus:py-2">Saltar al contenido</a>
+    <slot name="header" />
+    <main id="main-content">
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

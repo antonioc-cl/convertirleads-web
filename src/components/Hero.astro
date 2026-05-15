@@ -1,0 +1,58 @@
+---
+const problems = [
+  {
+    num: '/01',
+    title: 'Mi sitio se ve bien\npero no convierte.',
+    copy: 'Bonito sin estrategia. Hecho sin hablar con un cliente real. Hecho sin medir nada. Hecho para que se vea bien en una presentación.',
+  },
+  {
+    num: '/02',
+    title: 'Tengo tráfico,\npero no clientes.',
+    copy: 'Las visitas no pagan la cuenta. Si no segmentas, si no entiendes el job, si no tienes una propuesta de valor honesta, lo que llega son curiosos.',
+  },
+  {
+    num: '/03',
+    title: 'Pago ads\ny no sé si funcionan.',
+    copy: 'Sin analítica decente, sin atribución, sin un norte de qué cuenta como éxito, los ads son una rifa cara — y la pagas tú cada mes.',
+  },
+];
+---
+
+<section class="relative z-[1] mx-auto max-w-[1240px] px-6 py-16 md:px-8 md:py-24 lg:pb-28">
+  <div class="reveal">
+    <img src="/images/logo/convertirleads_compact_color_transparent.svg" alt="convertirLeads" class="mb-12 h-14 w-auto" />
+    <div class="eyebrow mb-12 inline-flex items-center gap-3">
+      <span class="h-px w-7 bg-sage-deep" aria-hidden="true"></span>
+      Antonio Correa <span class="h-1.5 w-1.5 rounded-full bg-sage" aria-hidden="true"></span> desde el sur de Chile
+    </div>
+
+    <h1 class="max-w-[1050px] font-serif text-[clamp(48px,7.4vw,104px)] leading-[0.96] tracking-[-0.025em] text-ink">
+      Estrategia digital<br />que se <span class="highlight">ejecuta</span>.
+    </h1>
+  </div>
+
+  <div class="reveal mt-14 grid gap-10 md:mt-16 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-18">
+    <p class="max-w-[620px] text-lg leading-relaxed text-ink-soft md:text-lg">
+      Soy Antonio. Estratega digital, Máster en Marketing Digital, más de diez años haciendo que esto funcione. <strong class="font-semibold text-ink">No vendo reportes, vendo resultados.</strong> Trabajo con empresas que ya saben que necesitan ayuda y prefieren una persona con criterio en vez de una agencia con powerpoints.
+    </p>
+    <div class="flex flex-col items-start gap-4">
+      <a href="#cta-final" class="bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+        Conversemos
+      </a>
+      <span class="font-mono text-xs tracking-[0.05em] text-stone">→ 45 min · sin costo · sin venta</span>
+    </div>
+  </div>
+
+  <div class="reveal mt-16 border border-mist bg-mist md:mt-20">
+    <h2 class="sr-only">Problemas que resolvemos</h2>
+    <div class="grid gap-px md:grid-cols-3">
+      {problems.map((problem) => (
+        <article class="bg-paper p-8 transition-colors hover:bg-paper-warm md:min-h-64 md:p-10">
+          <span class="font-mono text-xs tracking-[0.12em] text-sage-deep">{problem.num}</span>
+          <h3 class="mt-5 whitespace-pre-line font-serif text-xl leading-tight tracking-[-0.005em] text-ink">“{problem.title}”</h3>
+          <p class="mt-8 text-sm leading-relaxed text-ink-soft">{problem.copy}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

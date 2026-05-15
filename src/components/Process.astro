@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  steps: CollectionEntry<'process'>[];
+}
+
+const { steps } = Astro.props;
+const renderedSteps = await Promise.all(
+  steps.map(async (step) => {
+    const { Content } = await step.render();
+    const [primary, ...rest] = (step.data.price ?? '').split(' · ');
+    return { ...step, Content, primary, rest: rest.join(' · ') };
+  }),
+);
+---
+
+<section id="proceso" class="relative z-[1] bg-paper-warm">
+  <div class="mx-auto max-w-[1240px] px-6 py-20 md:px-8 md:py-28">
+    <div class="reveal mb-12 border-b border-mist pb-8">
+      <div class="flex items-baseline justify-between gap-6">
+        <span class="eyebrow">04 · cómo trabajamos</span>
+        <span class="font-mono text-xs tracking-[0.08em] text-stone">→ sin sorpresas</span>
+      </div>
+    </div>
+
+    <h2 class="reveal mb-10 max-w-[900px] font-serif text-[clamp(40px,5.4vw,72px)] leading-[0.98] tracking-[-0.02em] text-ink">
+      Cuatro pasos.<br /><span class="highlight">Sin sorpresas</span>.
+    </h2>
+
+    <div class="relative">
+      <div class="absolute left-6 top-8 hidden h-[calc(100%-4rem)] w-px bg-sage/60 md:block"></div>
+      {renderedSteps.map(({ data, Content, primary, rest }) => (
+        <article class="reveal relative grid gap-5 border-b border-mist py-9 last:border-b-0 md:grid-cols-[auto_1fr_auto] md:gap-8">
+          <div class="relative z-[1] flex h-12 w-12 items-center justify-center rounded-full border border-sage bg-paper-warm font-mono text-xs tracking-[0.08em] text-sage-deep md:h-14 md:w-14">
+            {String(data.step).padStart(2, '0')}
+          </div>
+          <div>
+            <h3 class="font-serif text-xl leading-tight tracking-[-0.005em] text-ink">{data.title}</h3>
+            <div class="mt-3 max-w-[620px] text-base leading-relaxed text-ink-soft">
+              <Content />
+            </div>
+          </div>
+          <div class="font-mono text-xs tracking-[0.05em] text-stone md:pt-4 md:text-right">
+            <strong class="mb-1 block text-xs font-medium text-ink">{primary}</strong>
+            {rest}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

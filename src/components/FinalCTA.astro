@@ -1,0 +1,38 @@
+---
+---
+
+<section id="cta-final" class="relative z-[1] bg-ink text-paper">
+  <div class="reveal mx-auto grid max-w-[1240px] gap-12 px-6 py-24 md:grid-cols-[1.3fr_1fr] md:px-8 md:py-36 lg:gap-20">
+    <div>
+      <div class="eyebrow mb-7 flex items-center gap-3 !text-sage">
+        <span class="h-px w-7 bg-sage" aria-hidden="true"></span>
+        06 · conversemos
+      </div>
+      <h2 class="font-serif text-[clamp(48px,6.2vw,92px)] leading-[0.96] tracking-[-0.025em] text-paper">
+        ¿Tienes un proyecto?<br />Cuéntame en <span class="highlight">tres líneas</span>.
+      </h2>
+      <p class="mt-8 max-w-[560px] text-lg leading-relaxed text-paper/75">
+        Con eso decido si soy la persona correcta. Si lo soy, agendamos. Si no lo soy, te lo digo y <strong class="font-semibold text-paper">te ahorro la conversación</strong>. Si conozco a alguien que sí calce, te derivo.
+      </p>
+      <a href="mailto:quiero@convertirleads.cl" class="mt-10 inline-flex bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+        quiero@convertirleads.cl →
+      </a>
+    </div>
+
+    <aside class="border border-paper/20 bg-paper/5 p-8">
+      <div class="mb-6 border-b border-paper/15 pb-4 font-mono text-xs uppercase tracking-[0.15em] text-sage">para escribirme bien</div>
+      <ol class="mb-6 list-none space-y-0">
+        {['Qué tienes hoy.', 'Qué te frena.', 'Qué quieres lograr.'].map((item, index) => (
+          <li class="grid grid-cols-[auto_1fr] border-b border-dashed border-paper/15 py-3 text-lg">
+            <span class="font-mono text-xs tracking-[0.05em] text-sage">0{index + 1}</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ol>
+      <span class="block border-t border-paper/15 pt-5 font-mono text-xs tracking-[0.05em] text-paper/60">
+        Respondo en 24 horas hábiles.
+        <strong class="mt-1 block text-sm font-medium text-terracotta">quiero@convertirleads.cl</strong>
+      </span>
+    </aside>
+  </div>
+</section>

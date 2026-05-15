@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import Landing from '../layouts/Landing.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Authority from '../components/Authority.astro';
+import HowIThink from '../components/HowIThink.astro';
+import Services from '../components/Services.astro';
+import Process from '../components/Process.astro';
+import Cases from '../components/Cases.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
+
+const serviceOrder = ['estrategia-marketing', 'sitios-tiendas', 'producto-digital', 'diseno'];
+const services = (await getCollection('services')).sort((a, b) => serviceOrder.indexOf(a.id) - serviceOrder.indexOf(b.id));
+const steps = (await getCollection('process')).sort((a, b) => a.data.step - b.data.step);
+const cases = await getCollection('cases');
+---
+
+<Landing>
+  <Header slot="header" />
+  <Hero />
+  <Authority />
+  <HowIThink />
+  <Services services={services} />
+  <Process steps={steps} />
+  <Cases cases={cases} />
+  <FinalCTA />
+  <Footer slot="footer" />
+  <script src="../scripts/scroll-reveal.ts"></script>
+</Landing>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://convertirleads.cl/sitemap-index.xml

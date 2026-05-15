@@ -1,0 +1,49 @@
+---
+const navLinks = [
+  { href: '/#autoridad', label: 'Autoridad' },
+  { href: '/#como-pienso', label: 'Cómo pienso' },
+  { href: '/#servicios', label: 'Servicios' },
+  { href: '/#proceso', label: 'Proceso' },
+  { href: '/#casos', label: 'Casos' },
+];
+---
+
+<header class="sticky top-0 z-50 h-18 border-b border-mist bg-paper/94 backdrop-blur-md">
+  <div class="mx-auto flex h-full max-w-[1240px] items-center justify-between gap-6 px-6 md:px-8">
+    <a href="/" class="flex items-center" aria-label="convertirLeads">
+      <img
+        src="/images/logo/convertirleads_primary_color_transparent.svg"
+        alt=""
+        class="h-9 w-auto"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-9 font-sans text-sm font-medium md:flex" aria-label="Principal">
+      {navLinks.map((link) => (
+        <a class="border-b-2 border-transparent py-1 no-underline transition-colors hover:border-sage hover:text-ink-soft" href={link.href}>
+          {link.label}
+        </a>
+      ))}
+      <a class="bg-terracotta px-5 py-2.5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark" href="/#cta-final">
+        Conversemos →
+      </a>
+    </nav>
+
+    <details class="group relative md:hidden">
+      <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center border border-mist text-ink [&::-webkit-details-marker]:hidden" aria-label="Abrir menú">
+        <span class="text-xl leading-none group-open:hidden">☰</span>
+        <span class="hidden text-xl leading-none group-open:block">×</span>
+      </summary>
+      <nav class="absolute right-0 top-12 w-64 border border-mist bg-paper-warm p-4 shadow-md" aria-label="Menú móvil">
+        <div class="flex flex-col gap-3 text-sm font-medium">
+          {navLinks.map((link) => (
+            <a class="no-underline hover:text-sage-deep" href={link.href}>{link.label}</a>
+          ))}
+          <a class="mt-2 bg-terracotta px-4 py-3 text-center text-ink no-underline hover:bg-terracotta-dark" href="/#cta-final">
+            Conversemos →
+          </a>
+        </div>
+      </nav>
+    </details>
+  </div>
+</header>

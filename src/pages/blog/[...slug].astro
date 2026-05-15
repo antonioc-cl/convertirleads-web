@@ -1,0 +1,45 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Landing from '../../layouts/Landing.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const blogFiles = import.meta.glob('../../content/blog/**/*.{md,mdx}');
+
+  if (Object.keys(blogFiles).length === 0) {
+    return [];
+  }
+
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Landing title={`${post.data.title} — convertirLeads`} description={post.data.excerpt} canonical={`https://convertirleads.cl/blog/${post.slug}/`}>
+  <Header slot="header" />
+  <article class="relative z-[1] mx-auto max-w-[860px] px-6 py-20 md:px-8 md:py-28">
+    <a href="/blog/" class="font-mono text-[11px] uppercase tracking-[0.15em] text-sage-deep no-underline hover:text-ink">← Blog</a>
+    <header class="mt-8 border-b border-mist pb-10">
+      <time class="font-mono text-[11px] tracking-[0.1em] text-stone" datetime={post.data.date.toISOString()}>
+        {post.data.date.toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+      <h1 class="mt-5 font-serif text-[clamp(44px,5.4vw,76px)] leading-[0.98] tracking-[-0.02em] text-ink">{post.data.title}</h1>
+      <p class="mt-6 text-lg leading-relaxed text-ink-soft">{post.data.excerpt}</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        {post.data.tags.map((tag) => <span class="border border-mist px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-stone">{tag}</span>)}
+      </div>
+    </header>
+    <div class="prose-content mt-12">
+      <Content />
+    </div>
+  </article>
+  <Footer slot="footer" />
+</Landing>
