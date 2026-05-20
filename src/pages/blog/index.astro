@@ -7,6 +7,7 @@ import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
 
 const blogFiles = import.meta.glob('../../content/blog/**/*.{md,mdx}');
+const slugFromId = (id: string) => id.replace(/\.mdx?$/, '');
 let posts: CollectionEntry<'blog'>[] = [];
 
 if (Object.keys(blogFiles).length > 0) {
@@ -35,7 +36,7 @@ if (Object.keys(blogFiles).length > 0) {
               {post.data.date.toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
             <h2 class="mt-4 font-serif text-3xl leading-tight text-ink">
-              <a class="no-underline hover:text-sage-deep" href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              <a class="no-underline hover:text-sage-deep" href={`/blog/${slugFromId(post.id)}/`}>{post.data.title}</a>
             </h2>
             <p class="mt-4 text-ink-soft">{post.data.excerpt}</p>
             <div class="mt-6 flex flex-wrap gap-2">

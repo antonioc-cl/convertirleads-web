@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
 
 interface Props {
   steps: CollectionEntry<'process'>[];
@@ -8,7 +8,7 @@ interface Props {
 const { steps } = Astro.props;
 const renderedSteps = await Promise.all(
   steps.map(async (step) => {
-    const { Content } = await step.render();
+    const { Content } = await render(step);
     const [primary, ...rest] = (step.data.price ?? '').split(' · ');
     return { ...step, Content, primary, rest: rest.join(' · ') };
   }),

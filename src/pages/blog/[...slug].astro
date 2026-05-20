@@ -1,10 +1,12 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Landing from '../../layouts/Landing.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Analytics from '../../components/Analytics.astro';
+
+const slugFromId = (id: string) => id.replace(/\.mdx?$/, '');
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogFiles = import.meta.glob('../../content/blog/**/*.{md,mdx}');
@@ -15,16 +17,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id.replace(/\.mdx?$/, '') },
     props: { post },
   }));
 };
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const slug = slugFromId(post.id);
+const { Content } = await render(post);
 ---
 
-<Landing title={`${post.data.title} — convertirLeads`} description={post.data.excerpt} canonical={`https://convertirleads.cl/blog/${post.slug}/`}>
+<Landing title={`${post.data.title} — convertirLeads`} description={post.data.excerpt} canonical={`https://convertirleads.cl/blog/${slug}/`}>
   <Header slot="header" />
   <article class="page-shell relative z-[1] max-w-[860px]">
     <a href="/blog/" class="font-mono text-[11px] uppercase tracking-[0.15em] text-sage-deep no-underline hover:text-ink">← Blog</a>
