@@ -3,57 +3,90 @@ const problems = [
   {
     num: '/01',
     title: 'Mi sitio se ve bien\npero no convierte.',
-    copy: 'Bonito sin estrategia. Hecho sin hablar con un cliente real. Hecho sin medir nada. Hecho para que se vea bien en una presentación.',
+    copy: 'Bonito sin estrategia. Hecho sin hablar con un cliente real. Hecho sin medir nada.',
   },
   {
     num: '/02',
     title: 'Tengo tráfico,\npero no clientes.',
-    copy: 'Las visitas no pagan la cuenta. Si no segmentas, si no entiendes el job, si no tienes una propuesta de valor honesta, lo que llega son curiosos.',
+    copy: 'Si no entiendes qué quiere tu cliente, lo que llega son curiosos.',
   },
   {
     num: '/03',
     title: 'Pago ads\ny no sé si funcionan.',
-    copy: 'Sin analítica decente, sin atribución, sin un norte de qué cuenta como éxito, los ads son una rifa cara — y la pagas tú cada mes.',
+    copy: 'Sin analítica ni atribución, los ads son una rifa cara.',
   },
 ];
 ---
 
-<section class="relative z-[1] mx-auto max-w-[1240px] px-6 py-16 md:px-8 md:py-24 lg:pb-28">
-  <div class="reveal">
-    <img src="/images/logo/convertirleads_compact_color_transparent.svg" alt="convertirLeads" class="mb-12 h-14 w-auto" />
-    <div class="eyebrow mb-12 inline-flex items-center gap-3">
-      <span class="h-px w-7 bg-sage-deep" aria-hidden="true"></span>
-      Antonio Correa <span class="h-1.5 w-1.5 rounded-full bg-sage" aria-hidden="true"></span> desde el sur de Chile
+<section class="relative z-[1] bg-paper">
+  <div class="hero-shell">
+
+    <div class="reveal">
+      <img id="hero-logo" src="/images/logo/convertirleads_compact_color_transparent.svg" alt="convertirLeads" class="mb-6 h-10 w-auto md:mb-8 md:h-14 transition-opacity duration-300" />
+      <div id="hero-eyebrow" class="eyebrow mb-8 inline-flex items-center gap-3 transition-opacity duration-300 md:mb-10">
+        <span class="h-px w-7 bg-sage-deep" aria-hidden="true"></span>
+        Desde el sur de Chile
+      </div>
+
+      <h1 class="max-w-[1050px] font-serif text-[clamp(32px,7vw,104px)] leading-[0.96] tracking-[-0.025em] text-ink">
+        Si estás gastando en marketing<br />sin saber si funciona,<br /><span class="highlight">partes por ahí.</span>
+      </h1>
     </div>
 
-    <h1 class="max-w-[1050px] font-serif text-[clamp(48px,7.4vw,104px)] leading-[0.96] tracking-[-0.025em] text-ink">
-      Estrategia digital<br />que se <span class="highlight">ejecuta</span>.
-    </h1>
-  </div>
-
-  <div class="reveal mt-14 grid gap-10 md:mt-16 md:grid-cols-[1.4fr_1fr] md:items-end md:gap-18">
-    <p class="max-w-[620px] text-lg leading-relaxed text-ink-soft md:text-lg">
-      Soy Antonio. Estratega digital, Máster en Marketing Digital, más de diez años haciendo que esto funcione. <strong class="font-semibold text-ink">No vendo reportes, vendo resultados.</strong> Trabajo con empresas que ya saben que necesitan ayuda y prefieren una persona con criterio en vez de una agencia con powerpoints.
-    </p>
-    <div class="flex flex-col items-start gap-4">
-      <a href="https://cal.com/antonio-developer/30min" target="_blank" rel="noopener" class="bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+    <!-- CTA móvil -->
+    <div class="reveal mt-8 flex flex-col gap-4 md:hidden">
+      <a href="/agendar" class="bg-terracotta px-6 py-4 text-center text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
         Agendar llamada →
       </a>
-      <span class="font-mono text-xs tracking-[0.05em] text-stone">→ 30 min · sin costo · sin venta</span>
-      <span class="text-xs text-stone">O escríbeme a <a href="mailto:quiero@convertirleads.cl" class="underline decoration-sage">quiero@convertirleads.cl</a></span>
+      <a href="/contacto" class="text-center text-xs text-stone no-underline hover:text-ink">o parte por escrito →</a>
     </div>
-  </div>
 
-  <div class="reveal mt-16 border border-mist bg-mist md:mt-20">
-    <h2 class="sr-only">Problemas que resolvemos</h2>
-    <div class="grid gap-px md:grid-cols-3">
-      {problems.map((problem) => (
-        <article class="bg-paper p-8 transition-colors hover:bg-paper-warm md:min-h-64 md:p-10">
-          <span class="font-mono text-xs tracking-[0.12em] text-sage-deep">{problem.num}</span>
-          <h3 class="mt-5 whitespace-pre-line font-serif text-xl leading-tight tracking-[-0.005em] text-ink">“{problem.title}”</h3>
-          <p class="mt-8 text-sm leading-relaxed text-ink-soft">{problem.copy}</p>
-        </article>
-      ))}
+    <div class="reveal mt-8 md:mt-12">
+      <p class="max-w-[620px] text-base leading-relaxed text-ink-soft md:text-lg">
+        Diagnóstico, plan y decisiones para empresas que ya están gastando sin saber qué funciona. <strong class="font-semibold text-ink">Una persona con criterio. Sin agencia.</strong>
+      </p>
+
+      <!-- CTA desktop -->
+      <div class="hidden mt-8 md:flex md:flex-col md:items-start md:gap-4">
+        <a href="/agendar" class="bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+          Agendar llamada →
+        </a>
+        <span class="font-mono text-xs tracking-[0.05em] text-stone">→ 30 min · sin costo · sin venta</span>
+        <a href="/contacto" class="text-xs text-stone no-underline hover:text-ink">O parte por escrito →</a>
+      </div>
+    </div>
+
+    <!-- Problemas: compacto en mobile -->
+    <div class="reveal mt-10 border-t border-mist pt-8 md:mt-16 md:border-none md:pt-0">
+      <h2 class="sr-only">Problemas que resolvemos</h2>
+
+      <!-- Mobile: accordion compacto -->
+      <details class="group md:hidden border border-mist bg-paper" open>
+        <summary class="flex cursor-pointer items-center justify-between p-4 list-none">
+          <span class="font-mono text-xs text-ink-soft">¿Te identificas con alguno? →</span>
+          <span class="text-lg group-open:hidden">+</span>
+          <span class="hidden text-lg group-open:block">−</span>
+        </summary>
+        <div class="border-t border-mist p-4 pt-3 space-y-4">
+          {problems.map((problem) => (
+            <div>
+              <h3 class="font-serif text-base text-ink">"{problem.title}"</h3>
+              <p class="mt-1 text-xs leading-relaxed text-ink-soft">{problem.copy}</p>
+            </div>
+          ))}
+        </div>
+      </details>
+
+      <!-- Desktop: grid horizontal -->
+      <div class="hidden grid-cols-3 gap-px border border-mist bg-mist md:grid">
+        {problems.map((problem) => (
+          <article class="bg-paper p-6 hover:bg-paper-warm lg:p-8">
+            <span class="font-mono text-xs tracking-[0.12em] text-sage-deep">{problem.num}</span>
+            <h3 class="mt-3 whitespace-pre-line font-serif text-lg leading-tight tracking-[-0.005em] text-ink">"{problem.title}"</h3>
+            <p class="mt-4 text-sm leading-relaxed text-ink-soft">{problem.copy}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </div>
 </section>

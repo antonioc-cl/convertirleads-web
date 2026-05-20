@@ -1,0 +1,29 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Landing title="Gracias por agendar — convertirLeads" description="Tu llamada está confirmada. Nos vemos pronto." canonical="https://convertirleads.cl/gracias">
+  <Header slot="header" />
+  <section class="relative z-[1] bg-paper">
+    <div class="page-shell mx-auto max-w-[1240px] flex min-h-[60vh] flex-col justify-center">
+      <div class="eyebrow mb-6">agendado</div>
+      <h1 class="max-w-[800px] font-serif text-[clamp(40px,6vw,72px)] leading-[0.96] tracking-[-0.025em] text-ink">
+        Nos vemos en la llamada.
+      </h1>
+      <p class="mt-8 max-w-[560px] text-lg leading-relaxed text-ink-soft">
+        Revisa tu email para la confirmación. Si no llega en 2 minutos, revisa spam o la pestaña de promociones.
+      </p>
+      <p class="mt-4 max-w-[560px] text-lg leading-relaxed text-ink-soft">
+        Mientras tanto, si quieres ir pensando: <strong class="font-semibold text-ink">qué problema estás tratando de resolver y qué has intentado antes.</strong> Con eso partimos.
+      </p>
+      <div class="mt-10">
+        <a href="/" class="inline-flex bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+          Volver al inicio →
+        </a>
+      </div>
+    </div>
+  </section>
+  <Footer slot="footer" />
+</Landing>

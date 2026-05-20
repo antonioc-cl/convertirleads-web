@@ -7,7 +7,12 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://convertirleads.cl',
-  integrations: [icon(), sitemap()],
+  integrations: [
+    icon(),
+    sitemap({
+      filter: (page) => !page.includes('/blog/'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

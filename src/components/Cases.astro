@@ -9,48 +9,32 @@ const { cases } = Astro.props;
 const onlyPlaceholders = cases.length === 0 || cases.every((item) => String(item.data.year).toLowerCase() === 'pendiente');
 ---
 
-<section id="casos" class="relative z-[1] mx-auto max-w-[1240px] px-6 py-20 md:px-8 md:py-28">
-  <div class="reveal grid items-end gap-6 border-b-4 border-double border-ink pb-5 md:grid-cols-[1fr_auto]">
-    <h2 class="font-serif text-[clamp(32px,4.5vw,56px)] leading-none tracking-[-0.02em] text-ink">El Diario de Casos</h2>
-    <div class="font-mono text-xs leading-relaxed tracking-[0.1em] text-stone md:text-right">
-      Vol. 01 · Edición Cero<br />
-      Antonio Correa · Puerto Varas
-    </div>
-  </div>
-
-  <div class="reveal mb-14 mt-2 flex items-baseline justify-between gap-6 border-b border-mist pb-4 font-mono text-xs uppercase tracking-[0.15em] text-ink">
-    <span>05 · prueba social — honestamente en construcción</span>
-    <span class="text-sage-deep">{onlyPlaceholders ? 'próximamente' : 'casos reales'}</span>
+<section id="casos" class="relative z-[1] bg-paper-warm">
+  <div class="section-shell">
+  <div class="reveal mb-12 border-b-4 border-double border-ink pb-5">
+    <div class="eyebrow mb-3">05 · proyectos</div>
+    <h2 class="font-serif text-[clamp(32px,4.5vw,56px)] leading-none tracking-[-0.02em] text-ink">
+      En reposicionamiento. Sin humo.
+    </h2>
   </div>
 
   {onlyPlaceholders ? (
     <div class="reveal">
-      <h3 class="max-w-[1000px] font-serif text-[clamp(40px,6vw,84px)] leading-[0.96] tracking-[-0.025em] text-ink">
-        Esta sección crece con<br /><span class="highlight">honestidad</span>, no con humo.
-      </h3>
-
-      <div class="mt-10 grid gap-10 border-b border-mist pb-12 md:grid-cols-2 md:gap-12">
-        <div class="space-y-4 text-lg leading-relaxed text-ink-soft">
-          <p>Estoy reposicionando este estudio. Las métricas reales de mis proyectos las publico apenas tenga permiso del cliente o el caso esté completamente anonimizado. <strong class="font-semibold text-ink">No invento gráficos para llenar espacio.</strong></p>
-          <p>Mientras tanto, tres cosas pueden pasar: que esto te frene, que conversemos de todas formas, o que solicites un dossier privado con casos completos.</p>
+      <div class="grid gap-10 border-b border-mist pb-12 md:grid-cols-2 md:gap-12">
+        <div class="space-y-5 text-lg leading-relaxed text-ink-soft">
+          <p>
+            Las métricas reales de mis proyectos las publico apenas tenga permiso del cliente o el caso esté completamente anonimizado. <strong class="font-semibold text-ink">No invento gráficos para llenar espacio.</strong>
+          </p>
+          <p>
+            Mientras tanto, hay un dossier privado para fundadores que estén evaluando trabajar conmigo.
+          </p>
         </div>
         <aside class="bg-ink p-8 text-paper">
           <div class="mb-5 border-b border-paper/15 pb-4 font-mono text-xs uppercase tracking-[0.15em] text-sage">→ acceso privado</div>
-          <h4 class="font-serif text-xl leading-tight text-paper">Dossier completo con métricas y aprendizajes.</h4>
-          <p class="mt-4 text-sm leading-relaxed text-paper/75">Tres a cinco casos detallados — incluyendo proyectos que no funcionaron como esperábamos. Se envía por email a fundadores y equipos que estén evaluando trabajar conmigo.</p>
-          <a href="mailto:quiero@convertirleads.cl?subject=Solicitar%20dossier" class="mt-6 inline-flex bg-terracotta px-6 py-3 text-sm font-medium text-ink no-underline hover:bg-terracotta-dark">Solicitar dossier →</a>
+          <h3 class="font-serif text-xl leading-tight text-paper">Dossier completo con métricas y aprendizajes.</h3>
+          <p class="mt-4 text-sm leading-relaxed text-paper/75">Tres a cinco casos detallados — incluyendo proyectos que no funcionaron como esperábamos. Lo comparto a fundadores y equipos que estén evaluando trabajar conmigo.</p>
+          <a href="/contacto?context=dossier" class="mt-6 inline-flex bg-terracotta px-6 py-3 text-sm font-medium text-ink no-underline hover:bg-terracotta-dark">Solicitar dossier →</a>
         </aside>
-      </div>
-
-      <div class="mt-12 grid gap-px border border-mist bg-mist md:grid-cols-3">
-        {cases.map((item, index) => (
-          <article class="bg-paper p-7 transition-colors hover:bg-paper-warm">
-            <span class="font-mono text-xs tracking-[0.12em] text-sage-deep">caso /{String(index + 1).padStart(2, '0')}</span>
-            <h4 class="mt-4 font-serif text-2xl leading-tight tracking-[-0.005em] text-ink">{item.data.industry}</h4>
-            <p class="mt-8 text-sm leading-relaxed text-ink-soft">{item.data.problem}</p>
-            <span class="mt-5 block border-t border-dashed border-mist pt-4 font-mono text-xs uppercase tracking-[0.15em] text-mustard-deep"><span aria-hidden="true">◷</span> Próximamente</span>
-          </article>
-        ))}
       </div>
     </div>
   ) : (
@@ -69,4 +53,5 @@ const onlyPlaceholders = cases.length === 0 || cases.every((item) => String(item
       ))}
     </div>
   )}
+  </div>
 </section>

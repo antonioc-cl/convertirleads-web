@@ -13,10 +13,24 @@ const renderedSteps = await Promise.all(
     return { ...step, Content, primary, rest: rest.join(' · ') };
   }),
 );
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Cómo trabajamos en convertirLeads',
+  description: 'Proceso de trabajo de Antonio Correa: conversación inicial, diagnóstico, ejecución y post-lanzamiento.',
+  totalTime: 'P1M',
+  step: steps.map((step) => ({
+    '@type': 'HowToStep',
+    position: step.data.step,
+    name: step.data.title,
+    text: step.body?.trim().slice(0, 200) || '',
+  })),
+};
 ---
 
-<section id="proceso" class="relative z-[1] bg-paper-warm">
-  <div class="mx-auto max-w-[1240px] px-6 py-20 md:px-8 md:py-28">
+<section id="proceso" class="relative z-[1] bg-paper">
+  <div class="section-shell">
     <div class="reveal mb-12 border-b border-mist pb-8">
       <div class="flex items-baseline justify-between gap-6">
         <span class="eyebrow">04 · cómo trabajamos</span>
@@ -50,3 +64,5 @@ const renderedSteps = await Promise.all(
     </div>
   </div>
 </section>
+
+<script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />

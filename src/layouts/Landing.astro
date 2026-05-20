@@ -5,34 +5,75 @@ interface Props {
   title?: string;
   description?: string;
   canonical?: string;
+  noindex?: boolean;
 }
 
 const {
-  title = 'convertirLeads — Antonio Correa · estudio digital',
-  description = 'Convierto estrategia en resultados medibles. Antonio Correa, estratega digital desde Puerto Varas, Chile.',
+  title = 'Estrategia digital y marketing para empresas en Chile — Antonio Correa | convertirLeads',
+  description = 'Estrategia digital, diagnóstico y plan de marketing para empresas que ya están gastando sin saber si funciona. Antonio Correa · 10 años · Chile y LatAm.',
   canonical = 'https://convertirleads.cl',
+  noindex = false,
 } = Astro.props;
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'convertirLeads',
-  alternateName: 'Antonio Correa · convertirLeads',
-  url: 'https://convertirleads.cl',
-  email: 'quiero@convertirleads.cl',
-  founder: {
-    '@type': 'Person',
-    name: 'Antonio Correa',
-    jobTitle: 'Estratega digital',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Puerto Varas',
-      addressRegion: 'Los Lagos',
-      addressCountry: 'CL',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://convertirleads.cl/#organization',
+      name: 'convertirLeads',
+      alternateName: 'Antonio Correa · convertirLeads',
+      url: 'https://convertirleads.cl',
+      founder: {
+        '@type': 'Person',
+        '@id': 'https://convertirleads.cl/#person',
+        name: 'Antonio Correa',
+        jobTitle: 'Estratega digital',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Puerto Varas',
+          addressRegion: 'Los Lagos',
+          addressCountry: 'CL',
+        },
+        sameAs: [
+          'https://www.linkedin.com/in/antonio-correa/',
+        ],
+      },
+      areaServed: {
+        '@type': 'Country',
+        name: 'Chile',
+      },
+      serviceType: [
+        'Estrategia digital',
+        'Marketing digital',
+        'Diseño web',
+        'Producto digital',
+        'Consultoría SEO',
+        'Publicidad digital',
+      ],
+      priceRange: '$$',
     },
-  },
-  areaServed: 'Chile',
-  serviceType: ['Estrategia digital', 'Marketing digital', 'Diseño web', 'Producto digital'],
+    {
+      '@type': 'WebPage',
+      '@id': canonical,
+      url: canonical,
+      name: title,
+      description: description,
+      inLanguage: 'es-CL',
+      isPartOf: { '@id': 'https://convertirleads.cl/#organization' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Inicio',
+          item: 'https://convertirleads.cl/',
+        },
+      ],
+    },
+  ],
 };
 ---
 
@@ -43,16 +84,36 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    {!noindex && <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />}
+    <meta name="theme-color" content="#322f3e" />
+    <meta name="author" content="Antonio Correa" />
+
+    <!-- Performance: preconnect external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://plausible.io" />
+    <link rel="dns-prefetch" href="https://cal.com" />
+
+    <slot name="head" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content="https://convertirleads.cl/images/og-image.svg" />
+    <meta property="og:image" content="https://convertirleads.cl/images/og-image.png" />
     <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="convertirLeads" />
+    <meta property="article:author" content="Antonio Correa" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://convertirleads.cl/images/og-image.svg" />
+    <meta name="twitter:image" content="https://convertirleads.cl/images/og-image.png" />
+    <meta name="twitter:creator" content="@antoniocorrea" />
+
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -66,5 +127,28 @@ const structuredData = {
       <slot />
     </main>
     <slot name="footer" />
+
+    <!-- Scroll to top -->
+    <button
+      id="scroll-top"
+      aria-label="Volver arriba"
+      class="fixed bottom-6 right-6 z-50 flex h-12 w-12 translate-y-24 items-center justify-center border border-mist bg-paper text-ink shadow-md transition-all duration-300 hover:bg-paper-warm focus-visible:outline focus-visible:outline-2 focus-visible:outline-sage"
+    >
+      ↑
+    </button>
+    <script is:inline>
+      (function() {
+        const btn = document.getElementById('scroll-top');
+        if (!btn) return;
+        const update = function() {
+          btn.classList.toggle('translate-y-24', window.scrollY < 500);
+        };
+        window.addEventListener('scroll', update, { passive: true });
+        btn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        update();
+      })();
+    </script>
   </body>
 </html>

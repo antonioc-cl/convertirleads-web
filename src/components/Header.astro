@@ -1,15 +1,16 @@
 ---
 const navLinks = [
-  { href: '/#autoridad', label: 'Autoridad' },
+  { href: '/#foco', label: 'Foco' },
   { href: '/#como-pienso', label: 'Cómo pienso' },
   { href: '/#servicios', label: 'Servicios' },
   { href: '/#proceso', label: 'Proceso' },
   { href: '/#casos', label: 'Casos' },
+  // Blog: oculta hasta tener 3+ artículos publicados
 ];
 ---
 
-<header class="sticky top-0 z-50 h-18 border-b border-mist bg-paper/94 backdrop-blur-md">
-  <div class="mx-auto flex h-full max-w-[1240px] items-center justify-between gap-6 px-6 md:px-8">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 translate-y-[-100%] transition-transform duration-300 ease-out border-b border-mist bg-paper/94 backdrop-blur-md">
+  <div class="mx-auto flex h-18 max-w-[1240px] items-center justify-between gap-6 px-6 md:px-8">
     <a href="/" class="flex items-center" aria-label="convertirLeads">
       <img
         src="/images/logo/convertirleads_primary_color_transparent.svg"
@@ -24,7 +25,7 @@ const navLinks = [
           {link.label}
         </a>
       ))}
-      <a class="bg-terracotta px-5 py-2.5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark" href="https://cal.com/antonio-developer/30min" target="_blank" rel="noopener">
+      <a class="bg-terracotta px-5 py-2.5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark" href="/agendar">
         Agendar llamada →
       </a>
     </nav>
@@ -39,7 +40,7 @@ const navLinks = [
           {navLinks.map((link) => (
             <a class="no-underline hover:text-sage-deep" href={link.href}>{link.label}</a>
           ))}
-          <a class="mt-2 bg-terracotta px-4 py-3 text-center text-ink no-underline hover:bg-terracotta-dark" href="https://cal.com/antonio-developer/30min" target="_blank" rel="noopener">
+          <a class="mt-2 bg-terracotta px-4 py-3 text-center text-ink no-underline hover:bg-terracotta-dark" href="/agendar">
             Agendar llamada →
           </a>
         </div>
@@ -47,3 +48,33 @@ const navLinks = [
     </details>
   </div>
 </header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const heroLogo = document.getElementById('hero-logo');
+  const heroEyebrow = document.getElementById('hero-eyebrow');
+
+  let lastScroll = 0;
+  const scrollThreshold = 100;
+
+  function handleScroll() {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > scrollThreshold) {
+      header?.classList.remove('translate-y-[-100%]');
+      heroLogo?.classList.add('opacity-0');
+      heroEyebrow?.classList.add('opacity-0');
+    } else {
+      header?.classList.add('translate-y-[-100%]');
+      heroLogo?.classList.remove('opacity-0');
+      heroEyebrow?.classList.remove('opacity-0');
+    }
+
+    lastScroll = currentScroll;
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Initial check in case page loads already scrolled
+  handleScroll();
+</script>

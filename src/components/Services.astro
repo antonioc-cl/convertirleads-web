@@ -7,16 +7,20 @@ interface Props {
 }
 
 const { services } = Astro.props;
-const romans = ['i', 'ii', 'iii', 'iv'];
 const renderedServices = await Promise.all(
   services.map(async (service) => {
     const { Content } = await service.render();
     return { ...service, Content };
   }),
 );
+
+// Estrategia is always first (index 0), others are secondary
+const estrategia = renderedServices[0];
+const secondary = renderedServices.slice(1);
 ---
 
-<section id="servicios" class="relative z-[1] mx-auto max-w-[1240px] px-6 py-20 md:px-8 md:py-28">
+<section id="servicios" class="relative z-[1] bg-paper-warm">
+  <div class="section-shell">
   <div class="reveal mb-12 border-b border-mist pb-8">
     <div class="flex items-baseline justify-between gap-6">
       <span class="eyebrow">03 · qué puedo hacer</span>
@@ -28,17 +32,47 @@ const renderedServices = await Promise.all(
     Cuatro áreas.<br /><span class="highlight">Cuándo conviene</span>, cuándo no.
   </h2>
 
-  <div class="grid gap-px border border-mist bg-mist md:grid-cols-2">
-    {renderedServices.map(({ data, Content }, index) => (
+  <!-- Estrategia como card principal destacada -->
+  <article class="reveal bg-paper p-8 transition-colors hover:bg-paper-warm md:p-12 border border-mist mb-px">
+    <div class="mb-6 flex items-start justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <span class="flex h-12 w-12 items-center justify-center border border-mist text-sage-deep">
+          <Icon name={`lucide:${estrategia.data.icon}`} class="h-6 w-6" aria-hidden="true" />
+        </span>
+        <span class="font-mono text-sm tracking-[0.12em] text-sage-deep">/ 01</span>
+      </div>
+      <span class="font-serif text-7xl leading-none text-mist" aria-hidden="true">i</span>
+    </div>
+    <h3 class="font-serif text-2xl leading-tight tracking-[-0.01em] text-ink md:text-3xl">{estrategia.data.title}</h3>
+    <div class="mt-5 text-base leading-relaxed text-ink-soft md:text-lg">
+      <estrategia.Content />
+    </div>
+    <div class="mt-8 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 border-t border-mist pt-6 text-sm md:grid-cols-[auto_1fr_auto_1fr]">
+      <div class="pt-1 font-mono text-xs font-medium uppercase tracking-[0.1em] text-sage-deep">Sí</div>
+      <div class="leading-relaxed text-ink-soft">{estrategia.data.whenGood}</div>
+      <div class="pt-1 font-mono text-xs font-medium uppercase tracking-[0.1em] text-stone">No</div>
+      <div class="leading-relaxed text-stone">{estrategia.data.whenBad}</div>
+    </div>
+  </article>
+
+  <!-- Bloque de transición -->
+  <div class="reveal bg-paper border border-mist px-8 py-10 md:px-12">
+    <p class="text-lg leading-relaxed text-ink">
+      La estrategia define qué construir. La ejecución la hago yo directamente o la coordino con un equipo in-house según el alcance. Lo que importa es que la cabeza estratégica sea la misma de principio a fin.
+    </p>
+  </div>
+
+  <!-- Tres cards secundarias en grid -->
+  <div class="grid gap-px border border-mist bg-mist md:grid-cols-3">
+    {secondary.map(({ data, Content }, index) => (
       <article class="reveal bg-paper p-8 transition-colors hover:bg-paper-warm md:p-10">
         <div class="mb-5 flex items-start justify-between gap-6">
           <div class="flex items-center gap-3">
             <span class="flex h-10 w-10 items-center justify-center border border-mist text-sage-deep">
               <Icon name={`lucide:${data.icon}`} class="h-5 w-5" aria-hidden="true" />
             </span>
-            <span class="font-mono text-xs tracking-[0.12em] text-sage-deep">/{String(index + 1).padStart(2, '0')}</span>
+            <span class="font-mono text-xs tracking-[0.12em] text-sage-deep">/ 0{index + 2}</span>
           </div>
-          <span class="font-serif text-5xl leading-none text-mist" aria-hidden="true">{romans[index]}</span>
         </div>
         <h3 class="font-serif text-xl leading-tight tracking-[-0.01em] text-ink">{data.title}</h3>
         <div class="mt-4 text-base leading-relaxed text-ink-soft">
@@ -52,5 +86,13 @@ const renderedServices = await Promise.all(
         </div>
       </article>
     ))}
+  </div>
+
+  <!-- Cross-link al proceso -->
+  <div class="reveal mt-12 text-center">
+    <a href="/#proceso" class="inline-flex items-center gap-2 font-mono text-xs tracking-[0.1em] text-stone no-underline transition-colors hover:text-ink">
+      Ver cómo trabajamos →
+    </a>
+  </div>
   </div>
 </section>

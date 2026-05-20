@@ -1,0 +1,46 @@
+---
+import Landing from '../layouts/Landing.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Landing title="Contacto — convertirLeads" description="Escríbeme en tres líneas y te respondo en 24 horas hábiles. Si tu caso se entiende mejor en una llamada, te lo diré de entrada." canonical="https://convertirleads.cl/contacto">
+  <Header slot="header" />
+  <section class="relative z-[1] bg-paper">
+    <div class="page-shell mx-auto max-w-[1240px]">
+      <div class="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+        <div>
+          <div class="eyebrow mb-6">contacto</div>
+          <h1 class="max-w-[780px] font-serif text-[clamp(40px,6vw,76px)] leading-[0.96] tracking-[-0.025em] text-ink">
+            Si prefieres partir por escrito, <span class="highlight">hazlo aquí</span>.
+          </h1>
+          <p class="mt-8 max-w-[620px] text-lg leading-relaxed text-ink-soft">
+            Cuéntame qué tienes hoy, qué te frena y qué quieres lograr. Con eso decido si soy la persona correcta, si conviene agendar de inmediato, o si te puedo derivar mejor.
+          </p>
+
+          <div class="mt-10 border-t border-mist pt-6">
+            <p class="font-mono text-xs uppercase tracking-[0.12em] text-ink-soft">Qué ayuda a responder mejor</p>
+            <ul class="mt-4 space-y-3 text-base leading-relaxed text-ink-soft">
+              <li>— Qué vendes o qué estás construyendo</li>
+              <li>— Qué probaste ya y dónde se está trabando</li>
+              <li>— Si necesitas diagnóstico, ejecución o ambas</li>
+            </ul>
+          </div>
+
+          <div class="mt-10 flex flex-col items-start gap-4 border-t border-mist pt-6">
+            <a href="/agendar" class="inline-flex border border-mist px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-paper-warm">
+              Prefiero agendar una llamada →
+            </a>
+            <p class="text-sm text-stone">Si ya sabes que una llamada de 30 minutos te acomoda mejor, puedes saltarte el formulario.</p>
+          </div>
+        </div>
+
+        <div class="border border-mist bg-paper-warm p-6 md:p-8">
+          <ContactForm context="contact-page" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer slot="footer" />
+</Landing>

@@ -8,12 +8,12 @@ import HowIThink from '../components/HowIThink.astro';
 import Services from '../components/Services.astro';
 import Process from '../components/Process.astro';
 import Cases from '../components/Cases.astro';
+import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 
-const serviceOrder = ['estrategia-marketing', 'sitios-tiendas', 'producto-digital', 'diseno'];
-const services = (await getCollection('services')).sort((a, b) => serviceOrder.indexOf(a.id) - serviceOrder.indexOf(b.id));
+const services = (await getCollection('services')).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 const steps = (await getCollection('process')).sort((a, b) => a.data.step - b.data.step);
 const cases = await getCollection('cases');
 ---
@@ -26,6 +26,7 @@ const cases = await getCollection('cases');
   <Services services={services} />
   <Process steps={steps} />
   <Cases cases={cases} />
+  <FAQ />
   <FinalCTA />
   <Footer slot="footer" />
   <script src="../scripts/scroll-reveal.ts"></script>

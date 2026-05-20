@@ -28,3 +28,8 @@ PLAN.md
 
 # jetbrains setting folder
 .idea/
+
+# local agent / deployment tool state
+.pi/
+.wrangler/
+.cloudflare/

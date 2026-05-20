@@ -1,0 +1,5 @@
+# Domain canonicalization (www -> non-www) is handled in functions/_middleware.ts.
+# Cloudflare Pages _redirects does not support domain-level redirects.
+/hosting-web https://computincloudhosting.com 301
+/hosting-web/ https://computincloudhosting.com 301
+/hosting-web/* https://computincloudhosting.com/:splat 301

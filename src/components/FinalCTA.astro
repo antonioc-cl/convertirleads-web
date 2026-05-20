@@ -1,9 +1,41 @@
 ---
+const emailItems = [
+  { title: 'Qué tienes hoy.', hint: 'ej: Landing page, tienda online, un negocio que crece' },
+  { title: 'Qué te frena.', hint: 'ej: No convierto, gasto en ads sin resultados' },
+  { title: 'Qué quieres lograr.', hint: 'ej: Vender más, reducir costos, escalar' },
+];
 ---
 
 <section id="cta-final" class="relative z-[1] bg-ink text-paper">
-  <div class="reveal mx-auto grid max-w-[1240px] gap-12 px-6 py-24 md:grid-cols-[1.3fr_1fr] md:px-8 md:py-36 lg:gap-20">
-    <div>
+  <div class="cta-shell reveal grid gap-12 md:grid-cols-[1.3fr_1fr] lg:gap-20">
+
+    <!-- Aside: primero en mobile (despues del h2), derecha en desktop -->
+    <aside class="border border-mist bg-paper p-8 order-2">
+      <div class="mb-6 border-b border-mist pb-4 font-mono text-xs uppercase tracking-[0.15em] text-sage-deep">para escribirme bien</div>
+      <h3 class="sr-only">Qué incluir en tu mensaje</h3>
+      <ol class="list-none space-y-0">
+        {emailItems.map((item, index) => (
+          <li class="border-b border-dashed border-mist py-3 last:border-b-0">
+            <div class="grid grid-cols-[auto_1fr] gap-3">
+              <span class="font-mono text-xs tracking-[0.05em] text-sage-deep pt-0.5">0{index + 1}</span>
+              <div>
+                <span class="text-base text-ink">{item.title}</span>
+                <span class="block text-xs text-stone mt-0.5">{item.hint}</span>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div class="mt-8 border-t border-mist pt-6">
+        <a href="/contacto" class="inline-flex bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+          Ir al formulario →
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-stone">Si prefieres partir por escrito, usa el formulario. Si ya tienes claridad, agenda una llamada.</p>
+      </div>
+    </aside>
+
+    <!-- Texto + CTA: segundo en mobile, izquierda en desktop -->
+    <div class="order-1">
       <div class="eyebrow mb-7 flex items-center gap-3 !text-sage">
         <span class="h-px w-7 bg-sage" aria-hidden="true"></span>
         06 · conversemos
@@ -12,30 +44,15 @@
         ¿Tienes un proyecto?<br />Cuéntame en <span class="highlight">tres líneas</span>.
       </h2>
       <p class="mt-8 max-w-[560px] text-lg leading-relaxed text-paper/75">
-        Con eso decido si soy la persona correcta. Si lo soy, agendamos. Si no lo soy, te lo digo y <strong class="font-semibold text-paper">te ahorro la conversación</strong>. Si conozco a alguien que sí calce, te derivo.
+        Con eso decido si soy la persona correcta. Si lo soy, agendamos. Si no lo soy, te lo digo y <strong class="font-semibold text-paper">te ahorro la conversación</strong>. Si conozco a alguien que te pueda ayudar mejor, te derivo.
       </p>
       <div class="mt-10 flex flex-col items-start gap-4">
-        <a href="https://cal.com/antonio-developer/30min" target="_blank" rel="noopener" class="inline-flex bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+        <a href="/agendar" class="inline-flex bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
           Agendar llamada →
         </a>
-        <a href="mailto:quiero@convertirleads.cl" class="text-paper/60 text-sm no-underline hover:text-sage">o escríbeme a quiero@convertirleads.cl</a>
+        <a href="/contacto" class="text-paper/60 text-sm no-underline hover:text-sage">o parte por escrito en el formulario</a>
       </div>
     </div>
 
-    <aside class="border border-paper/20 bg-paper/5 p-8">
-      <div class="mb-6 border-b border-paper/15 pb-4 font-mono text-xs uppercase tracking-[0.15em] text-sage">para escribirme bien</div>
-      <ol class="mb-6 list-none space-y-0">
-        {['Qué tienes hoy.', 'Qué te frena.', 'Qué quieres lograr.'].map((item, index) => (
-          <li class="grid grid-cols-[auto_1fr] border-b border-dashed border-paper/15 py-3 text-lg">
-            <span class="font-mono text-xs tracking-[0.05em] text-sage">0{index + 1}</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ol>
-      <span class="block border-t border-paper/15 pt-5 font-mono text-xs tracking-[0.05em] text-paper/60">
-        Respondo en 24 horas hábiles.
-        <a href="mailto:quiero@convertirleads.cl" class="mt-1 block text-sm font-medium text-terracotta no-underline hover:text-terracotta-dark">quiero@convertirleads.cl</a>
-      </span>
-    </aside>
   </div>
 </section>

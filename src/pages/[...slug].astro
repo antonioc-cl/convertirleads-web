@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import Landing from '../layouts/Landing.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const landings = await getCollection('landings');
+  return landings.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const { title, description, h1, type, city, region } = entry.data;
+
+const canonical = `https://convertirleads.cl/${entry.slug}/`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://convertirleads.cl/' },
+    { '@type': 'ListItem', position: 2, name: title, item: canonical },
+  ],
+};
+
+const serviceSchema = type === 'service' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: title,
+  description: description,
+  provider: { '@type': 'Person', name: 'Antonio Correa' },
+  areaServed: city ? { '@type': 'City', name: city } : { '@type': 'Country', name: 'Chile' },
+} : null;
+---
+
+<Landing title={title} description={description} canonical={canonical}>
+  <Header slot="header" />
+
+  <section class="relative z-[1] bg-paper">
+    <div class="page-shell mx-auto max-w-[1240px]">
+
+      <!-- Breadcrumb -->
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <ol class="flex gap-2 font-mono text-xs tracking-[0.05em] text-stone">
+          <li><a href="/" class="no-underline hover:text-ink">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-ink-soft">{title.split(' — ')[0]}</li>
+        </ol>
+      </nav>
+
+      <!-- Hero de landing -->
+      <div class="reveal mb-16">
+        {city && (
+          <div class="eyebrow mb-4">
+            {type === 'geo' ? `${city}${region ? `, ${region}` : ''}` : 'Servicio'}
+          </div>
+        )}
+        <h1 class="max-w-[1050px] font-serif text-[clamp(32px,6vw,80px)] leading-[0.96] tracking-[-0.025em] text-ink">
+          {h1}
+        </h1>
+      </div>
+
+      <!-- Contenido -->
+      <div class="reveal prose-content max-w-[720px]">
+        <Content />
+      </div>
+
+      <!-- CTA final de landing -->
+      <div class="reveal mt-16 border-t border-mist pt-10">
+        <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-8">
+          <a href="/agendar" class="bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+            Agendar llamada →
+          </a>
+          <span class="text-sm text-stone">
+            30 min · sin costo · sin venta
+          </span>
+        </div>
+      </div>
+
+      <!-- Cross-links -->
+      <div class="reveal mt-12 border-t border-mist pt-8">
+        <p class="font-mono text-xs tracking-[0.1em] text-stone mb-4">También podría interesarte:</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/estrategia-digital/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
+            Estrategia digital →
+          </a>
+          <a href="/diagnostico-digital/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
+            Diagnóstico digital →
+          </a>
+          {type !== 'geo' && (
+            <a href="/estratega-digital-chile/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
+              Estratega digital en Chile →
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {serviceSchema && <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />}
+</Landing>

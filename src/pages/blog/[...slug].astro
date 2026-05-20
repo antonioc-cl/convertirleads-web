@@ -26,7 +26,7 @@ const { Content } = await post.render();
 
 <Landing title={`${post.data.title} — convertirLeads`} description={post.data.excerpt} canonical={`https://convertirleads.cl/blog/${post.slug}/`}>
   <Header slot="header" />
-  <article class="relative z-[1] mx-auto max-w-[860px] px-6 py-20 md:px-8 md:py-28">
+  <article class="page-shell relative z-[1] max-w-[860px]">
     <a href="/blog/" class="font-mono text-[11px] uppercase tracking-[0.15em] text-sage-deep no-underline hover:text-ink">← Blog</a>
     <header class="mt-8 border-b border-mist pb-10">
       <time class="font-mono text-[11px] tracking-[0.1em] text-stone" datetime={post.data.date.toISOString()}>

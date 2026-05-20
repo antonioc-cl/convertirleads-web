@@ -60,7 +60,7 @@
   font-size: var(--text-xs);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--color-sage-deep);
+  color: var(--color-ink-soft);
 }
 
 @utility highlight {
@@ -92,6 +92,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -141,6 +142,14 @@ a {
 
 a:hover {
   text-decoration-color: var(--color-sage-deep);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .reveal {
@@ -195,6 +204,56 @@ a:hover {
 
 .prose-content a {
   color: var(--color-sage-deep);
+}
+
+.hero-shell,
+.section-shell,
+.cta-shell {
+  margin-inline: auto;
+  max-width: 1240px;
+  padding-inline: 1.5rem;
+  padding-block: 4rem;
+}
+
+.page-shell {
+  padding-inline: 1.5rem;
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .hero-shell,
+  .section-shell,
+  .page-shell,
+  .cta-shell {
+    padding-inline: 2rem;
+  }
+
+  .section-shell,
+  .page-shell {
+    padding-block: 7rem;
+  }
+
+  .hero-shell {
+    padding-block: 4rem;
+  }
+
+  .cta-shell {
+    padding-block: 9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-shell {
+    padding-block: 6rem;
+  }
+}
+
+/* Mobile readability: slightly larger base text */
+@media (max-width: 767px) {
+  body {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,72 @@
+---
+const faqs = [
+  {
+    question: '¿Qué es un diagnóstico digital y por qué lo necesito?',
+    answer: 'Un diagnóstico digital es un análisis de tu presencia online, tráfico, conversiones y funnel de ventas. Lo necesitas cuando estás gastando en marketing o desarrollo y no sabes qué está funcionando. Te dice dónde perder dinero y qué arreglar primero.',
+  },
+  {
+    question: '¿Cuánto cuesta trabajar con un estratega digital en Chile?',
+    answer: 'Depende del alcance. Cobro el diagnóstico aparte (7–10 días) y lo descuento si avanzamos a ejecución. No trabajo con paquetes predefinidos: cada propuesta incluye alcance, plazo y costo reales para tu situación.',
+  },
+  {
+    question: '¿Por qué mi sitio web se ve bien pero no convierte?',
+    answer: 'Porque el diseño sin estrategia es decoración. Un sitio que convierte entiende qué quiere resolver tu cliente, tiene una propuesta de valor clara, y mide cada paso del funnel. Si no hablaste con clientes reales antes de construirlo, probablemente estás hablando con curiosos, no compradores.',
+  },
+  {
+    question: '¿Trabajas solo o con un equipo?',
+    answer: 'La estrategia la hago yo directamente. La ejecución la hago yo o la coordino con un equipo in-house según el alcance. Lo que importa es que la cabeza estratégica sea la misma de principio a fin.',
+  },
+  {
+    question: '¿Cuánto tiempo toma ver resultados?',
+    answer: 'El diagnóstico toma 7–10 días. Las primeras entregas de ejecución son semanales. No vendo reportes: vendo decisiones que cambian la dirección del proyecto. Si algo no está funcionando, lo cambiamos antes de que termine, no después.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<section id="faq" class="relative z-[1] bg-paper">
+  <div class="section-shell">
+    <div class="reveal mb-12 border-b border-mist pb-8">
+      <div class="eyebrow mb-3">Preguntas frecuentes</div>
+      <h2 class="max-w-[900px] font-serif text-[clamp(32px,5vw,64px)] leading-[0.98] tracking-[-0.02em] text-ink">
+        Lo que suele preguntarse antes de empezar.
+      </h2>
+    </div>
+
+    <div class="space-y-0">
+      {faqs.map((faq, index) => (
+        <details class="reveal group border-b border-mist">
+          <summary class="flex cursor-pointer items-start justify-between gap-6 py-5 list-none">
+            <span class="font-mono text-xs text-sage-deep mt-1">/{String(index + 1).padStart(2, '0')}</span>
+            <span class="flex-1 font-serif text-xl leading-tight text-ink">{faq.question}</span>
+            <span class="text-lg text-stone group-open:hidden">+</span>
+            <span class="hidden text-lg text-stone group-open:block">−</span>
+          </summary>
+          <div class="pb-6 pl-12">
+            <p class="max-w-[680px] text-base leading-relaxed text-ink-soft md:text-lg">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="reveal mt-12 text-center">
+      <a href="/#cta-final" class="inline-flex bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
+        Agendar llamada →
+      </a>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

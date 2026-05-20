@@ -19,6 +19,7 @@ const services = defineCollection({
     icon: z.string(),
     whenGood: z.string(),
     whenBad: z.string(),
+    order: z.number(),
   }),
 });
 
@@ -41,4 +42,18 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { cases, services, process, blog };
+const landings = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    h1: z.string(),
+    type: z.enum(['service', 'geo', 'aeo', 'compare']),
+    city: z.string().optional(),
+    region: z.string().optional(),
+    ogImage: z.string().optional(),
+    noindex: z.boolean().optional(),
+  }),
+});
+
+export const collections = { cases, services, process, blog, landings };

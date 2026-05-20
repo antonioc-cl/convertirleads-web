@@ -1,44 +1,23 @@
 ---
-const links = [
-  { href: '/#autoridad', label: 'Autoridad' },
-  { href: '/#como-pienso', label: 'Cómo pienso' },
+const footerLinks = [
+  { href: '/#foco', label: 'Foco' },
   { href: '/#servicios', label: 'Servicios' },
   { href: '/#proceso', label: 'Proceso' },
-  { href: '/#casos', label: 'Casos' },
+  { href: '/#faq', label: 'FAQ' },
 ];
 ---
 
-<footer class="relative z-[1] border-t border-paper/10 bg-ink px-6 py-14 text-paper/75 md:px-8">
+<footer class="relative z-[1] border-t border-paper/10 bg-ink px-6 py-8 md:px-8">
   <div class="mx-auto max-w-[1240px]">
-    <div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr] md:gap-16">
-      <div>
-        <a href="/" aria-label="convertirLeads" class="inline-flex no-underline">
-          <img src="/images/logo/convertirleads_compact_on_dark.svg" alt="" class="h-12 w-auto" />
-        </a>
-        <p class="mt-5 max-w-[380px] text-sm leading-relaxed text-paper/65">
-          Antonio Correa · convertirLeads. Estudio digital. Estrategia y ejecución en una sola persona. Desde Puerto Varas, X Región. Parte de <a class="text-sage no-underline hover:text-paper" href="https://computin.dev">computin.dev</a>.
-        </p>
-      </div>
-      <div>
-        <h2 class="mb-4 font-mono text-xs font-medium uppercase tracking-[0.15em] text-sage">Estudio</h2>
-        <ul class="space-y-2">
-          {links.map((link) => (
-            <li><a class="text-sm text-paper/75 no-underline hover:text-sage" href={link.href}>{link.label}</a></li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        <h2 class="mb-4 font-mono text-xs font-medium uppercase tracking-[0.15em] text-sage">Contacto</h2>
-        <ul class="space-y-2">
-          <li><a class="text-sm text-terracotta no-underline hover:text-terracotta-dark" href="mailto:quiero@convertirleads.cl">quiero@convertirleads.cl</a></li>
-          <li><a class="text-sm text-paper/75 no-underline hover:text-sage" href="/blog/">Blog</a></li>
-          <li><a class="text-sm text-paper/75 no-underline hover:text-sage" href="https://computincloudhosting.com">→ computin cloud hosting</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-10 flex flex-col gap-3 border-t border-paper/10 pt-6 font-mono text-xs tracking-[0.05em] text-paper/60 md:flex-row md:items-center md:justify-between">
+    <nav class="mb-4 flex flex-wrap gap-x-6 gap-y-2" aria-label="Footer">
+      {footerLinks.map((link) => (
+        <a class="text-xs text-paper/50 no-underline transition-colors hover:text-sage" href={link.href}>{link.label}</a>
+      ))}
+    </nav>
+    <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between font-mono text-xs tracking-[0.05em] text-paper/60">
       <span>© 2026 convertirLeads · Antonio Correa</span>
-      <span>Puerto Varas · X Región · Chile</span>
+      <a href="https://www.linkedin.com/in/antonio-correa/" target="_blank" rel="noopener noreferrer" class="text-paper/50 no-underline transition-colors hover:text-sage">LinkedIn →</a>
+      <span>Desde Puerto Varas, Los Lagos. X Región, Chile</span>
     </div>
   </div>
 </footer>

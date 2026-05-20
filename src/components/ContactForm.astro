@@ -1,0 +1,176 @@
+---
+interface Props {
+  context?: string;
+}
+
+const { context = 'contact-page' } = Astro.props;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+---
+
+<form id="contact-form" class="mt-8 space-y-5" method="post" action="/api/contact" novalidate>
+  <div>
+    <label for="contact-name" class="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-ink-soft">Tu nombre</label>
+    <input
+      id="contact-name"
+      name="name"
+      type="text"
+      required
+      minlength="2"
+      maxlength="80"
+      autocomplete="name"
+      class="w-full border border-mist bg-paper px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-stone/70 focus:border-sage"
+      placeholder="Cómo te llamas"
+    />
+  </div>
+
+  <div>
+    <label for="contact-email" class="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-ink-soft">Email</label>
+    <input
+      id="contact-email"
+      name="email"
+      type="email"
+      required
+      maxlength="160"
+      autocomplete="email"
+      class="w-full border border-mist bg-paper px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-stone/70 focus:border-sage"
+      placeholder="tu@empresa.cl"
+    />
+  </div>
+
+  <div>
+    <label for="contact-company" class="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-ink-soft">Empresa o proyecto</label>
+    <input
+      id="contact-company"
+      name="company"
+      type="text"
+      maxlength="120"
+      autocomplete="organization"
+      class="w-full border border-mist bg-paper px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-stone/70 focus:border-sage"
+      placeholder="Nombre de la empresa o proyecto"
+    />
+  </div>
+
+  <div>
+    <label for="contact-message" class="mb-2 block font-mono text-xs uppercase tracking-[0.12em] text-ink-soft">Cuéntame en tres líneas</label>
+    <textarea
+      id="contact-message"
+      name="message"
+      required
+      minlength="30"
+      maxlength="2000"
+      rows="7"
+      class="w-full resize-y border border-mist bg-paper px-4 py-3 text-base leading-relaxed text-ink outline-none transition-colors placeholder:text-stone/70 focus:border-sage"
+      placeholder="Qué tienes hoy, qué te frena y qué quieres lograr."
+    ></textarea>
+    <p class="mt-2 text-xs text-stone">Mínimo 30 caracteres. Respondo en 24 horas hábiles.</p>
+  </div>
+
+  <div class="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+    <label for="contact-website">No llenar este campo</label>
+    <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+  </div>
+
+  <input id="contact-form-context" type="hidden" name="formContext" value={context} />
+
+  {turnstileSiteKey ? (
+    <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
+  ) : (
+    <p class="rounded-sm border border-terracotta/30 bg-terracotta/10 px-4 py-3 text-sm text-ink">
+      Falta configurar el site key de Turnstile para el build.
+    </p>
+  )}
+
+  <div class="flex flex-col items-start gap-4 pt-2">
+    <button
+      id="contact-submit"
+      type="submit"
+      class="inline-flex bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark disabled:cursor-not-allowed disabled:opacity-60"
+      disabled={!turnstileSiteKey}
+    >
+      Enviar mensaje →
+    </button>
+    <p id="contact-form-status" class="min-h-[1.5rem] text-sm text-ink-soft" aria-live="polite"></p>
+    <p class="text-sm text-stone">Si tu caso se entiende mejor en una conversación corta, también puedes agendar una llamada.</p>
+  </div>
+</form>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script is:inline define:vars={{ turnstileSiteKey }}>
+  const form = document.getElementById('contact-form');
+  const submitButton = document.getElementById('contact-submit');
+  const statusEl = document.getElementById('contact-form-status');
+  const messageEl = document.getElementById('contact-message');
+  const contextInput = document.getElementById('contact-form-context');
+
+  const setStatus = (message, tone = 'neutral') => {
+    if (!statusEl) return;
+    statusEl.textContent = message;
+    statusEl.className = 'min-h-[1.5rem] text-sm';
+    if (tone === 'error') statusEl.classList.add('text-terracotta-dark');
+    else if (tone === 'success') statusEl.classList.add('text-sage-deep');
+    else statusEl.classList.add('text-ink-soft');
+  };
+
+  const setSubmitting = (isSubmitting, available = true) => {
+    if (!submitButton) return;
+    submitButton.disabled = isSubmitting || !available;
+    submitButton.textContent = isSubmitting ? 'Enviando…' : 'Enviar mensaje →';
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const contextFromUrl = params.get('context');
+  if (contextInput instanceof HTMLInputElement && contextFromUrl) {
+    contextInput.value = contextFromUrl;
+  }
+
+  setSubmitting(false, Boolean(turnstileSiteKey));
+
+  if (form) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      setStatus('');
+
+      if (messageEl instanceof HTMLTextAreaElement) {
+        const tooShort = messageEl.value.trim().length < 30;
+        messageEl.setCustomValidity(tooShort ? 'Cuéntame un poco más para poder ayudarte.' : '');
+      }
+
+      if (!form.reportValidity()) return;
+
+      const turnstileToken = form.querySelector('input[name="cf-turnstile-response"]')?.value;
+      if (!turnstileToken || !turnstileSiteKey) {
+        setStatus('Falta la verificación anti-spam.', 'error');
+        return;
+      }
+
+      setSubmitting(true, true);
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+
+        const payload = await response.json().catch(() => ({}));
+
+        if (!response.ok || !payload.ok) {
+          throw new Error(payload.error || 'No pude enviar tu mensaje. Intenta de nuevo en un minuto.');
+        }
+
+        form.reset();
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+        setStatus('Mensaje enviado. Te respondo dentro de 24 horas hábiles.', 'success');
+      } catch (error) {
+        setStatus(error instanceof Error ? error.message : 'No pude enviar tu mensaje.', 'error');
+        if (window.turnstile) {
+          window.turnstile.reset();
+        }
+      } finally {
+        setSubmitting(false, true);
+      }
+    });
+  }
+</script>
