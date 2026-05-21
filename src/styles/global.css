@@ -245,7 +245,7 @@ summary:focus-visible {
 
 .hero-title {
   max-width: 1120px;
-  font-size: clamp(2.65rem, 7.8vw, 9.2rem);
+  font-size: clamp(2.85rem, 5vw, 5.4rem);
 }
 
 .hero-figure {
@@ -259,7 +259,7 @@ summary:focus-visible {
 
 .diagnostic-mark {
   position: relative;
-  min-height: 620px;
+  min-height: 460px;
 }
 
 .diagnostic-label,
@@ -277,9 +277,9 @@ summary:focus-visible {
 
 .diagnostic-board {
   position: relative;
-  width: min(36vw, 520px);
+  width: clamp(280px, 24vw, 400px);
   aspect-ratio: 1;
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
   border: 1px solid var(--color-mist);
   background:
     linear-gradient(90deg, rgb(50 47 62 / 0.045) 1px, transparent 1px),
@@ -379,9 +379,9 @@ summary:focus-visible {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  margin-top: 2.5rem;
-  padding-left: 3.5rem;
-  max-width: min(36vw, 520px);
+  margin-top: 1.75rem;
+  padding-left: 2.5rem;
+  max-width: clamp(280px, 24vw, 400px);
 }
 
 .diagnostic-caption span:first-child {
@@ -422,10 +422,10 @@ summary:focus-visible {
 
 @media (min-width: 1024px) {
   .hero-shell {
-    grid-template-columns: minmax(0, 1.16fr) minmax(360px, 0.84fr);
+    grid-template-columns: minmax(0, 1fr) clamp(320px, 26vw, 410px);
     align-items: center;
-    min-height: calc(100vh - 2rem);
-    padding-block: clamp(4.5rem, 7vw, 7.5rem);
+    min-height: calc(100svh - 1rem);
+    padding-block: clamp(2.75rem, 5vh, 4.75rem);
   }
 
   .hero-copy {
@@ -438,7 +438,7 @@ summary:focus-visible {
 
   .hero-problems {
     grid-column: 1 / -1;
-    margin-top: clamp(1rem, 3vw, 3rem);
+    margin-top: clamp(0.75rem, 2vh, 1.5rem);
   }
 }
 
