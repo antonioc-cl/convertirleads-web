@@ -4,7 +4,9 @@ interface Props {
 }
 
 const { context = 'contact-page' } = Astro.props;
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+// Turnstile site keys are public. Keep a repo fallback so manual direct-upload
+// builds do not ship a disabled contact form when the shell env is missing.
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAADShrQTpTEh-6NSU';
 ---
 
 <form id="contact-form" class="mt-8 space-y-5" method="post" action="/api/contact" novalidate>

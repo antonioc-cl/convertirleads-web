@@ -237,6 +237,157 @@ summary:focus-visible {
   padding-block: 4rem;
 }
 
+.hero-shell {
+  display: grid;
+  max-width: 1480px;
+  gap: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.hero-title {
+  max-width: 1120px;
+  font-size: clamp(2.65rem, 7.8vw, 9.2rem);
+}
+
+.hero-figure {
+  display: none;
+}
+
+.hero-problems {
+  border-top: 1px solid var(--color-mist);
+  padding-top: 2rem;
+}
+
+.diagnostic-mark {
+  position: relative;
+  min-height: 620px;
+}
+
+.diagnostic-label,
+.diagnostic-caption {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+
+.diagnostic-label {
+  margin-left: 5.5rem;
+}
+
+.diagnostic-board {
+  position: relative;
+  width: min(36vw, 520px);
+  aspect-ratio: 1;
+  margin-top: 2.5rem;
+  border: 1px solid var(--color-mist);
+  background:
+    linear-gradient(90deg, rgb(50 47 62 / 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgb(50 47 62 / 0.045) 1px, transparent 1px),
+    var(--color-paper-warm);
+  background-size: 48px 48px;
+  transform: rotate(-4deg);
+}
+
+.diagnostic-board::before {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px solid var(--color-sage);
+  transform: rotate(11deg);
+}
+
+.diagnostic-board::after {
+  content: '';
+  position: absolute;
+  right: -12%;
+  bottom: -10%;
+  width: 42%;
+  aspect-ratio: 1;
+  background: var(--color-mustard);
+  opacity: 0.42;
+  transform: rotate(19deg);
+}
+
+.diag-ring {
+  position: absolute;
+  inset: 24%;
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  opacity: 0.82;
+}
+
+.diag-axis,
+.diag-cut {
+  position: absolute;
+  display: block;
+  background: var(--color-ink);
+  opacity: 0.72;
+}
+
+.diag-axis-x {
+  left: 12%;
+  right: 12%;
+  top: 50%;
+  height: 1px;
+}
+
+.diag-axis-y {
+  top: 12%;
+  bottom: 12%;
+  left: 50%;
+  width: 1px;
+}
+
+.diag-cut-a {
+  left: 18%;
+  top: 26%;
+  width: 68%;
+  height: 2px;
+  transform: rotate(32deg);
+  background: var(--color-terracotta);
+}
+
+.diag-cut-b {
+  left: 29%;
+  top: 69%;
+  width: 42%;
+  height: 2px;
+  transform: rotate(-18deg);
+  background: var(--color-sage-deep);
+}
+
+.diag-node {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid var(--color-ink);
+  background: var(--color-paper);
+  padding: 0.65rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  color: var(--color-ink);
+  box-shadow: 8px 8px 0 rgb(50 47 62 / 0.08);
+}
+
+.diag-node-web { left: 7%; top: 18%; }
+.diag-node-ads { right: 4%; top: 31%; }
+.diag-node-seo { left: 13%; bottom: 18%; }
+.diag-node-crm { right: 13%; bottom: 9%; }
+
+.diagnostic-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding-left: 3.5rem;
+  max-width: min(36vw, 520px);
+}
+
+.diagnostic-caption span:first-child {
+  color: var(--color-sage-deep);
+}
+
 .page-shell {
   padding-inline: 1.5rem;
   padding-block: 4rem;
@@ -256,7 +407,12 @@ summary:focus-visible {
   }
 
   .hero-shell {
-    padding-block: 4rem;
+    padding-block: 4.5rem;
+  }
+
+  .hero-problems {
+    border-top: 0;
+    padding-top: 0;
   }
 
   .cta-shell {
@@ -266,7 +422,29 @@ summary:focus-visible {
 
 @media (min-width: 1024px) {
   .hero-shell {
-    padding-block: 6rem;
+    grid-template-columns: minmax(0, 1.16fr) minmax(360px, 0.84fr);
+    align-items: center;
+    min-height: calc(100vh - 2rem);
+    padding-block: clamp(4.5rem, 7vw, 7.5rem);
+  }
+
+  .hero-copy {
+    min-width: 0;
+  }
+
+  .hero-figure {
+    display: block;
+  }
+
+  .hero-problems {
+    grid-column: 1 / -1;
+    margin-top: clamp(1rem, 3vw, 3rem);
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-shell {
+    padding-inline: clamp(2rem, 4vw, 4rem);
   }
 }
 

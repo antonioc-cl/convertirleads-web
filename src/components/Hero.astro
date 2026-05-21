@@ -18,36 +18,24 @@ const problems = [
 ];
 ---
 
-<section class="relative z-[1] bg-paper">
+<section class="relative z-[1] overflow-hidden bg-paper">
   <div class="hero-shell">
-
-    <div class="reveal">
-      <img id="hero-logo" src="/images/logo/convertirleads_compact_color_transparent.svg" alt="convertirLeads" class="mb-6 h-10 w-auto md:mb-8 md:h-14 transition-opacity duration-300" />
+    <div class="hero-copy reveal">
+      <img id="hero-logo" src="/images/logo/convertirleads_compact_color_transparent.svg" alt="convertirLeads" class="mb-6 h-10 w-auto transition-opacity duration-300 md:mb-8 md:h-14" />
       <div id="hero-eyebrow" class="eyebrow mb-8 inline-flex items-center gap-3 transition-opacity duration-300 md:mb-10">
         <span class="h-px w-7 bg-sage-deep" aria-hidden="true"></span>
         Desde el sur de Chile
       </div>
 
-      <h1 class="max-w-[1050px] font-serif text-[clamp(32px,7vw,104px)] leading-[0.96] tracking-[-0.025em] text-ink">
-        Diagnóstico y consultoría<br />para saber qué marketing<br /><span class="highlight">sí funciona.</span>
+      <h1 class="hero-title font-serif leading-[0.94] tracking-[-0.032em] text-ink">
+        Diagnóstico y consultoría para saber qué marketing <span class="highlight">sí funciona.</span>
       </h1>
-    </div>
 
-    <!-- CTA móvil -->
-    <div class="reveal mt-8 flex flex-col gap-4 md:hidden">
-      <a href="/agendar" class="bg-terracotta px-6 py-4 text-center text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
-        Solicitar diagnóstico →
-      </a>
-      <a href="/contacto" class="text-center text-xs text-stone no-underline hover:text-ink">o parte por escrito →</a>
-    </div>
-
-    <div class="reveal mt-8 md:mt-12">
-      <p class="max-w-[620px] text-base leading-relaxed text-ink-soft md:text-lg">
+      <p class="mt-8 max-w-[680px] text-base leading-relaxed text-ink-soft md:mt-10 md:text-lg">
         Para empresas que ya invierten en web, ads, SEO o CRM y necesitan detectar dónde pierden plata, qué corregir primero y qué proveedor realmente aporta. <strong class="font-semibold text-ink">Una persona con criterio. Sin agencia.</strong>
       </p>
 
-      <!-- CTA desktop -->
-      <div class="hidden mt-8 md:flex md:flex-col md:items-start md:gap-4">
+      <div class="mt-8 flex flex-col items-start gap-4 md:mt-10">
         <a href="/agendar" class="bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
           Solicitar diagnóstico →
         </a>
@@ -56,12 +44,31 @@ const problems = [
       </div>
     </div>
 
-    <!-- Problemas: compacto en mobile -->
-    <div class="reveal mt-10 border-t border-mist pt-8 md:mt-16 md:border-none md:pt-0">
+    <aside class="hero-figure reveal" aria-hidden="true">
+      <div class="diagnostic-mark">
+        <div class="diagnostic-label">Mapa de pérdida</div>
+        <div class="diagnostic-board">
+          <span class="diag-node diag-node-web">WEB</span>
+          <span class="diag-node diag-node-ads">ADS</span>
+          <span class="diag-node diag-node-seo">SEO</span>
+          <span class="diag-node diag-node-crm">CRM</span>
+          <span class="diag-ring"></span>
+          <span class="diag-cut diag-cut-a"></span>
+          <span class="diag-cut diag-cut-b"></span>
+          <span class="diag-axis diag-axis-x"></span>
+          <span class="diag-axis diag-axis-y"></span>
+        </div>
+        <div class="diagnostic-caption">
+          <span>/01</span>
+          <span>encontrar dónde se escapa la venta</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="hero-problems reveal">
       <h2 class="sr-only">Problemas que resolvemos</h2>
 
-      <!-- Mobile: accordion compacto -->
-      <details class="group md:hidden border border-mist bg-paper" open>
+      <details class="group border border-mist bg-paper md:hidden" open>
         <summary class="flex cursor-pointer items-center justify-between p-4 list-none">
           <span class="font-mono text-xs text-ink-soft">¿Te identificas con alguno? →</span>
           <span class="text-lg group-open:hidden">+</span>
@@ -77,10 +84,9 @@ const problems = [
         </div>
       </details>
 
-      <!-- Desktop: grid horizontal -->
       <div class="hidden grid-cols-3 gap-px border border-mist bg-mist md:grid">
         {problems.map((problem) => (
-          <article class="bg-paper p-6 hover:bg-paper-warm lg:p-8">
+          <article class="bg-paper p-6 transition-colors hover:bg-paper-warm lg:p-8">
             <span class="font-mono text-xs tracking-[0.12em] text-sage-deep">{problem.num}</span>
             <h3 class="mt-3 whitespace-pre-line font-serif text-lg leading-tight tracking-[-0.005em] text-ink">"{problem.title}"</h3>
             <p class="mt-4 text-sm leading-relaxed text-ink-soft">{problem.copy}</p>
