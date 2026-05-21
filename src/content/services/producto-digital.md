@@ -1,9 +1,9 @@
 ---
-title: "Producto digital"
-icon: "blocks"
-whenGood: "Cuando tienes una hipótesis de producto y necesitas validarla con código real."
-whenBad: "Cuando buscas una agencia para construir todo y olvidarte."
+title: "Consultoría estratégica"
+icon: "brain"
+whenGood: "Cuando necesitas criterio externo para decidir prioridades, revisar proveedores y no invertir a ciegas."
+whenBad: "Cuando quieres delegar todo sin involucrarte en las decisiones del negocio."
 order: 2
 ---
 
-SaaS, aplicaciones web, integraciones. La tecnología la decide el problema, no la moda.
+Acompañamiento para tomar mejores decisiones de marketing: roadmap, revisión de campañas, lectura de métricas, priorización y coordinación con equipos internos o agencias.

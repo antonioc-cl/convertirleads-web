@@ -1,46 +1,69 @@
 ---
 title: "¿Por qué mi sitio web no convierte? — 5 razones reales"
-description: "Tu sitio se ve bien pero no vende. Aquí están las 5 razones más comunes por las que un sitio web no convierte — y qué hacer al respecto."
+description: "Tu sitio se ve bien pero no vende. Estas son las razones más comunes por las que una web no convierte y cómo diagnosticar qué falla primero."
 h1: "¿Por qué mi sitio web no convierte? 5 razones y cómo arreglarlas."
 type: aeo
+updated: 2026-05-21
+answer: "Un sitio web no convierte cuando atrae tráfico equivocado, comunica mal la propuesta de valor, no tiene una acción clara, no genera confianza o no mide el embudo. La solución no es rediseñar de inmediato, sino diagnosticar dónde se rompe la decisión del cliente."
+faqs:
+  - question: "¿Qué significa que un sitio web convierta?"
+    answer: "Significa que transforma visitas en una acción útil para el negocio: formularios, llamadas, compras, cotizaciones, reservas o leads calificados."
+  - question: "¿Una web bonita debería convertir más?"
+    answer: "No necesariamente. El diseño ayuda, pero si el mensaje, tráfico, confianza y medición fallan, una web bonita puede seguir sin generar ventas."
+  - question: "¿Qué debería revisar primero?"
+    answer: "Primero propuesta de valor, fuente de tráfico, CTA principal, eventos de conversión y seguimiento posterior al lead."
+  - question: "¿Cuándo conviene hacer un diagnóstico?"
+    answer: "Cuando ya invertiste en web, ads o SEO y no sabes si el problema está en diseño, mensaje, tráfico, tracking o seguimiento comercial."
 ---
 
-## "Mi sitio se ve bien pero no convierte."
+## “Mi sitio se ve bien, pero no vende.”
 
-Es la frase que más escucho. Y la respuesta casi siempre es la misma: el diseño sin estrategia es decoración.
+Es una frase común. Y la respuesta casi siempre es incómoda: el diseño sin estrategia es decoración.
+
+Antes de rediseñar, conviene diagnosticar. Una web puede fallar por mensaje, tráfico, confianza, medición, oferta o seguimiento comercial. Si no sabes cuál es la causa, puedes gastar de nuevo en el mismo problema.
 
 ## Razón 1: No sabes qué quiere resolver tu cliente
 
-Un sitio que convierte empieza por entender el **job-to-be-done**: qué contrata tu cliente cuando te contrata. No es "una página web". Es "más ventas", "menos llamadas de soporte", "que me encuentren en Google".
+Un sitio que convierte parte por entender qué compra realmente tu cliente. No compra “una página web”, “un servicio” o “una solución integral”. Compra más ventas, menos riesgo, más confianza, ahorro de tiempo o claridad para decidir.
 
-**Cómo arreglarlo:** Mapea 5 clientes reales. Pregúntales cómo te encontraron, qué les hizo confiar, y qué casi los hizo irse.
+**Cómo arreglarlo:** habla con clientes reales. Pregunta cómo te encontraron, qué les hizo confiar y qué casi los hizo irse.
 
 ## Razón 2: Tu propuesta de valor está escondida
 
-Si un visitante no entiende en 5 segundos qué haces y para quién, se va. La mayoría de los sitios chilenos tienen un hero genérico: "Soluciones integrales para tu empresa".
+Si una persona no entiende en 5 segundos qué haces, para quién y por qué debería importarle, se va. Muchos sitios dicen lo mismo: “soluciones integrales”, “acompañamiento personalizado”, “calidad y compromiso”.
 
-**Cómo arreglarlo:** Tu H1 debe nombrar el problema, no la categoría. No "Consultoría digital". Sí "Estrategia digital para empresas que gastan sin saber qué funciona".
+**Cómo arreglarlo:** el H1 debe nombrar el problema o resultado, no solo la categoría. Mejor “Diagnóstico para saber qué marketing sí funciona” que “Consultoría integral”.
 
 ## Razón 3: No hay una acción clara
 
-Un sitio que convierte tiene un solo CTA (call to action) dominante. No tres botones, no un menú de 8 opciones, no "síguenos en redes".
+Una página que convierte tiene una acción dominante. Si compiten “cotizar”, “llamar”, “ver servicios”, “seguir en redes” y “conocer más”, el usuario no sabe qué hacer.
 
-**Cómo arreglarlo:** Una sola acción por página. "Agendar llamada", "Solicitar diagnóstico", "Descargar guía". El resto es distracción.
+**Cómo arreglarlo:** define una conversión principal por página: agendar, solicitar diagnóstico, cotizar o escribir. El resto debe apoyar esa acción.
 
-## Razón 4: No mides nada
+## Razón 4: No mides el embudo
 
-Si no tienes Google Analytics 4 configurado correctamente, eventos de conversión, y un funnel definido, estás volando a ciegas.
+Si no tienes eventos, conversiones y seguimiento, no sabes si el sitio falla antes o después del formulario.
 
-**Cómo arreglarlo:** Define una conversión. ¿Un formulario? ¿Una llamada? ¿Una compra? Mídela. Todo lo demás es vanity metric.
+**Cómo arreglarlo:** mide al menos visitas, clics en CTA, formularios enviados, llamadas, origen del lead y calidad comercial. Sin eso, cualquier rediseño es una apuesta.
 
-## Razón 5: El tráfico es el equivocado
+## Razón 5: El tráfico es equivocado
 
-Puedes tener 10.000 visitas al mes y cero ventas si el tráfico viene de personas que nunca comprarían.
+Puedes tener muchas visitas y pocas oportunidades si atraes personas que nunca comprarían. Esto pasa con campañas mal segmentadas, SEO informativo sin intención comercial o contenido que trae curiosos.
 
-**Cómo arreglarlo:** Revisa de dónde viene tu tráfico. Si 80% es de Instagram pero tus clientes llegan por Google, estás invirtiendo mal.
+**Cómo arreglarlo:** separa tráfico útil de tráfico vanidoso. Revisa queries, campañas, ubicaciones, dispositivos, formularios y tasa de cierre.
+
+## Checklist rápido
+
+| Pregunta | Si la respuesta es “no” |
+| --- | --- |
+| ¿El H1 dice claramente qué haces y para quién? | Hay problema de mensaje |
+| ¿Existe un CTA principal visible? | Hay fricción de conversión |
+| ¿Sabes qué canal trae leads buenos? | Hay problema de medición |
+| ¿El formulario se responde y califica? | Hay problema de seguimiento |
+| ¿Tu contenido responde dudas de compra? | Hay problema SEO/AEO |
 
 ## ¿Necesitas ayuda para diagnosticar tu sitio?
 
-Ofrezco un diagnóstico digital de 7–10 días donde te entrego exactamente cuál de estas razones te aplica y qué arreglar primero.
+Ofrezco un diagnóstico digital de 7–10 días para detectar cuál de estas razones te aplica y qué corregir primero.
 
 [Solicitar diagnóstico →](/agendar)

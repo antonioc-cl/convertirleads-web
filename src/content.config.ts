@@ -55,6 +55,12 @@ const landings = defineCollection({
     region: z.string().optional(),
     ogImage: z.string().optional(),
     noindex: z.boolean().optional(),
+    answer: z.string().optional(),
+    updated: z.date().optional(),
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
   }),
 });
 

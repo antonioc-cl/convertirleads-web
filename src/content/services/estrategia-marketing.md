@@ -1,9 +1,9 @@
 ---
-title: "Estrategia y marketing"
-icon: "chart-no-axes-combined"
-whenGood: "Cuando hay datos para analizar y un negocio real que crecer."
-whenBad: "Cuando lo que necesitas es solo un community manager."
+title: "Diagnóstico digital"
+icon: "search-check"
+whenGood: "Cuando ya gastas en marketing, web o ads y no sabes qué está funcionando."
+whenBad: "Cuando buscas ejecución sin revisar primero el problema real."
 order: 1
 ---
 
-Diagnóstico digital, posicionamiento, planes de contenido, email marketing, ads en Google y Meta, SEO, analítica.
+Auditoría estratégica de web, SEO/AEO, ads, analítica, propuesta de valor, CRM y conversión. La salida: dónde pierdes dinero y qué arreglar primero.

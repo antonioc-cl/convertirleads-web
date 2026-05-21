@@ -1,9 +1,9 @@
 ---
-title: "Diseño"
-icon: "palette"
-whenGood: "Cuando el diseño es parte de la estrategia, no decoración."
-whenBad: "Cuando quieres un logo en tres días sin contexto."
+title: "Web, landing y CRM"
+icon: "workflow"
+whenGood: "Cuando el diagnóstico muestra que el problema está en la página, el seguimiento o la captura de oportunidades."
+whenBad: "Cuando solo quieres una web más bonita sin corregir mensaje, medición ni proceso comercial."
 order: 4
 ---
 
-Branding, identidad visual, diseño web, diseño de interfaces. Parte de cómo el cliente decide si confía en ti.
+Landing pages, sitios, formularios, automatizaciones y CRM como consecuencia del diagnóstico. Tecnología al servicio de conversión, no decoración.

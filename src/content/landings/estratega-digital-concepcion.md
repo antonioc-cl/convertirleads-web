@@ -21,4 +21,4 @@ Universidades, industria, comercio. Empresas que necesitan estrategia digital pe
 
 No pagas el costo Santiago. Pagas por criterio. Las reuniones son por video llamada, las entregas son semanales, y el resultado es el mismo.
 
-[Agendar llamada →](/agendar)
+[Solicitar diagnóstico →](/agendar)

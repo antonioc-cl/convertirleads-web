@@ -1,5 +1,9 @@
 # Domain canonicalization (www -> non-www) is handled in functions/_middleware.ts.
 # Cloudflare Pages _redirects does not support domain-level redirects.
+# Blog redirects are duplicated in functions/_middleware.ts because middleware can bypass _redirects.
+/blog / 302
+/blog/ / 302
+/blog/* / 302
 /hosting-web https://computincloudhosting.com 301
 /hosting-web/ https://computincloudhosting.com 301
 /hosting-web/* https://computincloudhosting.com/:splat 301

@@ -21,4 +21,4 @@ Minería, servicios mineros, logística. Empresas con alto poder adquisitivo per
 
 He trabajado con empresas B2B en Santiago y otras regiones. El proceso es el mismo: entender el ciclo de venta, identificar quién toma la decisión, y construir un funnel que no dependa solo de reuniones presenciales.
 
-[Agendar llamada →](/agendar)
+[Solicitar diagnóstico →](/agendar)

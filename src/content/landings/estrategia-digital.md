@@ -1,34 +1,51 @@
 ---
 title: "Estrategia digital para empresas en Chile — convertirLeads"
-description: "Diagnóstico, plan y ejecución de estrategia digital para empresas que ya están gastando en marketing y no saben qué funciona. Antonio Correa · 10 años de experiencia."
-h1: "Estrategia digital que parte por el diagnóstico."
+description: "Estrategia digital para empresas que ya gastan en marketing y necesitan convertir diagnóstico en prioridades, roadmap y mejores decisiones comerciales."
+h1: "Estrategia digital que parte por diagnóstico, no por ocurrencias."
 type: service
+updated: 2026-05-21
+answer: "Una estrategia digital define qué vender, a quién, con qué mensaje, por qué canales, con qué métricas y en qué orden. Para empresas que ya invierten en marketing, debería partir con diagnóstico: sin entender qué falla hoy, la estrategia se vuelve una lista de acciones sin criterio."
+faqs:
+  - question: "¿Qué incluye una estrategia digital?"
+    answer: "Incluye diagnóstico, posicionamiento, propuesta de valor, canales prioritarios, métricas, roadmap y criterios para decidir qué ejecutar o pausar."
+  - question: "¿Es lo mismo que un plan de marketing?"
+    answer: "No exactamente. El plan organiza acciones. La estrategia define por qué esas acciones tienen sentido y qué resultado deberían producir."
+  - question: "¿Por qué partir por diagnóstico?"
+    answer: "Porque muchas empresas ya están haciendo cosas: web, ads, SEO, contenido o CRM. Antes de sumar más acciones, hay que saber qué funciona y qué no."
+  - question: "¿La ejecución también la haces tú?"
+    answer: "Puede ser conmigo, con tu equipo o con proveedores. Lo importante es que la ejecución responda a la estrategia, no al revés."
 ---
 
-## La mayoría empieza por el canal. Nosotros partimos por el negocio.
+## La mayoría empieza por el canal. Yo parto por el negocio.
 
-Tienes tráfico, gastas en ads, tienes un sitio web — pero no sabes si funciona. Eso no es un problema de marketing. Es un problema de estrategia.
+Tienes tráfico, campañas, sitio web, agencia o equipo interno, pero no sabes si eso genera oportunidades reales. Eso no es solo un problema de marketing: es un problema de estrategia.
 
-Una estrategia digital no es un plan de redes sociales. Es entender qué problema resuelves, para quién, y cómo lo sabe tu cliente antes de que te contrate.
+Una estrategia digital no es “estar en redes”, “hacer SEO” o “mejorar la web”. Es decidir qué problema comercial se va a resolver y qué acciones tienen más probabilidad de moverlo.
 
 ## Qué incluye
 
-- **Diagnóstico digital:** Análisis de tu presencia online, tráfico, conversiones y funnel de ventas. Dónde pierdes dinero y qué arreglar primero.
-- **Plan estratégico:** Posicionamiento, propuesta de valor, canales prioritarios y métricas de éxito. Sin humo, sin powerpoints.
-- **Ejecución:** La hago yo directamente o coordino un equipo in-house según el alcance. La cabeza estratégica es la misma de principio a fin.
+- **Diagnóstico digital:** lectura del estado actual: web, SEO/AEO, ads, analítica, CRM, propuesta de valor y conversión.
+- **Posicionamiento:** qué vendes, para quién, con qué diferencia y qué dolores conviene activar.
+- **Canales prioritarios:** SEO, AEO, ads, email, LinkedIn, referidos, partners o landings según intención y recursos.
+- **Métricas:** qué se mide para decidir, no solo para reportar.
+- **Roadmap:** qué hacer primero, qué dejar para después y qué derechamente no hacer.
+- **Ejecución:** conmigo, con tu equipo o con proveedores, según lo que tenga más sentido.
 
 ## Para quién es
 
-Empresas que ya están gastando en marketing, ads o desarrollo y necesitan saber qué está funcionando antes de gastar más.
+Para empresas que ya están gastando en marketing, ads, SEO, desarrollo o contenido y necesitan una dirección clara antes de seguir invirtiendo.
 
-## Para quién NO es
+También para dueños o gerencias que necesitan entender si lo que hacen sus proveedores está conectado con ventas, o solo con actividad.
 
-Si buscas un community manager, un community posteador o alguien que "maneje tus redes", no soy la persona correcta. [Te lo digo de entrada y te ahorro la conversación](/#cta-final).
+## Para quién no es
+
+No es para quien busca un community manager, una grilla de contenidos o una web bonita sin revisar el negocio. Si eso es lo que necesitas, probablemente hay mejores proveedores.
 
 ## Cómo partimos
 
-1. **Conversación inicial (45 min, gratis):** Levanto qué problema estás tratando de resolver.
-2. **Diagnóstico (7–10 días, cobrado):** Te entrego dónde estás perdiendo dinero y qué arreglar primero.
-3. **Propuesta:** Alcance, plazo, costo. Si tiene sentido, avanzamos. Si no, te lo digo.
+1. **Conversación inicial:** levantamos contexto, inversión actual y dolor principal.
+2. **Diagnóstico:** reviso dónde se pierde dinero y qué debería corregirse primero.
+3. **Estrategia:** definimos prioridades, canales, mensaje, métricas y roadmap.
+4. **Consultoría o ejecución:** acompañamiento según alcance.
 
-[Agendar conversación inicial →](/agendar)
+[Solicitar diagnóstico →](/agendar)

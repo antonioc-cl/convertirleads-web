@@ -1,9 +1,9 @@
 ---
-title: "Sitios y tiendas"
-icon: "shopping-cart"
-whenGood: "Cuando el sitio tiene que vender o ser un activo de negocio."
-whenBad: "Cuando solo necesitas un sitio bonito de portafolio."
+title: "SEO/AEO y conversión"
+icon: "chart-spline"
+whenGood: "Cuando tu sitio existe pero no aparece, no responde preguntas clave o no convierte tráfico en oportunidades."
+whenBad: "Cuando esperas rankings sin mejorar contenido, autoridad ni experiencia de usuario."
 order: 3
 ---
 
-Sitios institucionales, landings, e-commerce. WordPress y WooCommerce cuando hace sentido. Shopify cuando el cliente lo necesita. Desarrollo a medida cuando ninguna alternativa encaja.
+Optimización para buscadores y respuestas de IA: arquitectura, titles, schema, FAQ, contenido citable, intención de búsqueda, enlaces internos y páginas que convierten.

@@ -28,4 +28,4 @@ Trabajo desde Puerto Varas desde hace años. La distancia no es un problema: mis
 
 He trabajado con empresas de turismo, tecnología y servicios en Puerto Varas, Puerto Montt, Frutillar y Osorno. Entiendo el contexto local y las dinámicas de temporada.
 
-[Agendar llamada →](/agendar)
+[Solicitar diagnóstico →](/agendar)

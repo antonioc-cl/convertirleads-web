@@ -21,4 +21,4 @@ Hoteles, restaurantes, tour operadores. Todos dependen de Booking y TripAdvisor,
 
 He trabajado con empresas de La Serena remotamente. El proceso es el mismo: diagnóstico, plan, ejecución semanal.
 
-[Agendar llamada →](/agendar)
+[Solicitar diagnóstico →](/agendar)

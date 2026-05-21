@@ -26,4 +26,4 @@ Aunque trabajo desde Puerto Varas, el 70% de mis proyectos son con empresas de l
 - Startups en etapa de crecimiento
 - Educación y capacitación online
 
-[Agendar llamada →](/agendar)
+[Solicitar diagnóstico →](/agendar)

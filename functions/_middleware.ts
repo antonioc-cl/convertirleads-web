@@ -2,8 +2,10 @@ const CANONICAL_HOST = 'convertirleads.cl';
 const WWW_HOST = `www.${CANONICAL_HOST}`;
 const HOSTING_WEB_PATH = '/hosting-web';
 const HOSTING_WEB_TARGET = 'https://computincloudhosting.com';
+const BLOG_PATH = '/blog';
 
 const permanentRedirect = (url: URL) => Response.redirect(url.toString(), 301);
+const temporaryRedirect = (url: URL) => Response.redirect(url.toString(), 302);
 
 export async function onRequest(context: { request: Request; next: () => Promise<Response> }) {
   const url = new URL(context.request.url);
@@ -22,6 +24,14 @@ export async function onRequest(context: { request: Request; next: () => Promise
     const destination = new URL(`${HOSTING_WEB_TARGET}/${splat}`);
     destination.search = url.search;
     return permanentRedirect(destination);
+  }
+
+  // Blog is intentionally hidden while there are no published posts.
+  // Use a temporary redirect so the section can return later without SEO baggage.
+  if (url.pathname === BLOG_PATH || url.pathname === `${BLOG_PATH}/` || url.pathname.startsWith(`${BLOG_PATH}/`)) {
+    const destination = new URL('/', url.origin);
+    destination.search = url.search;
+    return temporaryRedirect(destination);
   }
 
   if (hostname === WWW_HOST) {

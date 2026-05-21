@@ -26,4 +26,4 @@ No te vendo "conocimiento local". Te vendo **criterio**: alguien que ha visto lo
 
 Remoto, con reuniones por video llamada. Entregas semanales. Si necesitamos una reunión presencial, coordinamos.
 
-[Agendar llamada →](/agendar)
+[Solicitar diagnóstico →](/agendar)

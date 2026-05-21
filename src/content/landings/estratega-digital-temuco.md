@@ -21,4 +21,4 @@ Comercio, servicios, agricultura. Empresas que compiten con Santiago pero con pr
 
 No necesitas contratar a alguien de Santiago para tener estrategia digital de nivel. He trabajado con empresas de varias regiones de Chile con el mismo proceso: diagnóstico, plan, ejecución.
 
-[Agendar llamada →](/agendar)
+[Solicitar diagnóstico →](/agendar)

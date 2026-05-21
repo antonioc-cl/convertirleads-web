@@ -9,9 +9,9 @@ interface Props {
 }
 
 const {
-  title = 'Estrategia digital y marketing para empresas en Chile — Antonio Correa | convertirLeads',
-  description = 'Estrategia digital, diagnóstico y plan de marketing para empresas que ya están gastando sin saber si funciona. Antonio Correa · 10 años · Chile y LatAm.',
-  canonical = 'https://convertirleads.cl',
+  title = 'Diagnóstico y consultoría de marketing en Chile — convertirLeads',
+  description = 'Diagnóstico digital y consultoría de marketing para empresas que ya gastan en web, ads o SEO y necesitan saber qué funciona, qué no y qué arreglar primero.',
+  canonical = 'https://convertirleads.cl/',
   noindex = false,
 } = Astro.props;
 
@@ -19,39 +19,51 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'Person',
+      '@id': 'https://convertirleads.cl/#person',
+      name: 'Antonio Correa',
+      jobTitle: 'Consultor de marketing y estratega digital',
+      url: 'https://convertirleads.cl',
+      sameAs: [
+        'https://www.linkedin.com/in/antoniocorreas/',
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Puerto Varas',
+        addressRegion: 'Los Lagos',
+        addressCountry: 'CL',
+      },
+    },
+    {
       '@type': 'ProfessionalService',
       '@id': 'https://convertirleads.cl/#organization',
       name: 'convertirLeads',
       alternateName: 'Antonio Correa · convertirLeads',
       url: 'https://convertirleads.cl',
-      founder: {
-        '@type': 'Person',
-        '@id': 'https://convertirleads.cl/#person',
-        name: 'Antonio Correa',
-        jobTitle: 'Estratega digital',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Puerto Varas',
-          addressRegion: 'Los Lagos',
-          addressCountry: 'CL',
-        },
-        sameAs: [
-          'https://www.linkedin.com/in/antonio-correa/',
-        ],
-      },
-      areaServed: {
-        '@type': 'Country',
-        name: 'Chile',
-      },
-      serviceType: [
-        'Estrategia digital',
-        'Marketing digital',
-        'Diseño web',
-        'Producto digital',
-        'Consultoría SEO',
-        'Publicidad digital',
+      logo: 'https://convertirleads.cl/images/logo/convertirleads_primary_color_transparent.svg',
+      founder: { '@id': 'https://convertirleads.cl/#person' },
+      areaServed: [
+        { '@type': 'AdministrativeArea', name: 'Los Lagos' },
+        { '@type': 'Country', name: 'Chile' },
       ],
-      priceRange: '$$',
+      serviceType: [
+        'Diagnóstico digital',
+        'Consultoría de marketing',
+        'Auditoría SEO y AEO',
+        'Estrategia digital',
+        'Optimización de conversión',
+        'CRM y automatización',
+        'Landing pages de conversión',
+      ],
+      priceRange: '$$$',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://convertirleads.cl/#website',
+      url: 'https://convertirleads.cl',
+      name: 'convertirLeads',
+      inLanguage: 'es-CL',
+      publisher: { '@id': 'https://convertirleads.cl/#organization' },
     },
     {
       '@type': 'WebPage',
@@ -60,7 +72,8 @@ const structuredData = {
       name: title,
       description: description,
       inLanguage: 'es-CL',
-      isPartOf: { '@id': 'https://convertirleads.cl/#organization' },
+      isPartOf: { '@id': 'https://convertirleads.cl/#website' },
+      about: { '@id': 'https://convertirleads.cl/#organization' },
     },
     {
       '@type': 'BreadcrumbList',
