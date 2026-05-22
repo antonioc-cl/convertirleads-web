@@ -1,0 +1,30 @@
+---
+interface Props {
+  label?: string;
+  href?: string;
+  note?: string;
+  event?: string;
+}
+
+const {
+  label = 'Solicitar diagnóstico →',
+  href = '/agendar/',
+  note = '30 min · sin costo · sin venta',
+  event = 'seo_cta_primary_click',
+} = Astro.props;
+---
+
+<div class="reveal mt-16 border-t border-mist pt-10">
+  <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-8">
+    <a
+      href={href}
+      class="bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark"
+      data-seo-event={event}
+      data-seo-label={label}
+      data-seo-destination={href}
+    >
+      {label}
+    </a>
+    {note && <span class="text-sm text-stone">{note}</span>}
+  </div>
+</div>

@@ -57,6 +57,12 @@ const landings = defineCollection({
     noindex: z.boolean().optional(),
     answer: z.string().optional(),
     updated: z.date().optional(),
+    ctaLabel: z.string().optional(),
+    ctaHref: z.string().optional(),
+    internalLinks: z.array(z.object({
+      href: z.string(),
+      label: z.string(),
+    })).optional(),
     faqs: z.array(z.object({
       question: z.string(),
       answer: z.string(),

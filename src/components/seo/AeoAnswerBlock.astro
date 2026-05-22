@@ -1,0 +1,14 @@
+---
+interface Props {
+  answer?: string;
+}
+
+const { answer } = Astro.props;
+---
+
+{answer && (
+  <aside class="reveal mb-12 max-w-[860px] border-l-4 border-sage bg-paper-warm p-6 md:p-8" aria-label="Respuesta breve">
+    <p class="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-sage-deep">Respuesta breve</p>
+    <p class="text-lg leading-relaxed text-ink md:text-xl">{answer}</p>
+  </aside>
+)}

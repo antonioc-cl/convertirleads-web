@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import SeoTracking from '../components/SeoTracking.astro';
 
 interface Props {
   title?: string;
@@ -140,6 +141,7 @@ const structuredData = {
       <slot />
     </main>
     <slot name="footer" />
+    <SeoTracking />
 
     <!-- Scroll to top -->
     <button

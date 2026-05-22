@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Landing title="Solicitar diagnóstico — convertirLeads" description="Agenda una llamada inicial de 30 minutos para evaluar si tiene sentido partir con diagnóstico digital o consultoría." canonical="https://convertirleads.cl/agendar/">
+<Landing title="Solicitar diagnóstico — convertirLeads" description="Agenda una llamada inicial de 30 minutos para evaluar si tiene sentido partir con diagnóstico digital o consultoría." canonical="https://convertirleads.cl/agendar/" noindex>
   <Header slot="header" />
   <section class="relative z-[1] bg-paper">
     <div class="page-shell mx-auto max-w-[1240px]">
@@ -17,7 +17,12 @@ import Footer from '../components/Footer.astro';
       </p>
 
       <!-- Cal.com inline embed -->
-      <div class="mt-10 min-h-[600px] border border-mist bg-paper p-2">
+      <div
+        class="mt-10 min-h-[600px] border border-mist bg-paper p-2"
+        data-seo-event="seo_calendar_click"
+        data-seo-label="Cal.com embed"
+        data-seo-destination="https://cal.com/antonio-developer/30min"
+      >
         <div id="cal-booking-place" style="width:100%;min-height:600px;"></div>
         <script type="text/javascript">
           (function (C, A, L) {

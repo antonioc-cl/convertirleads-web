@@ -1,0 +1,35 @@
+---
+---
+
+<script is:inline>
+  (function () {
+    function track(eventName, props) {
+      if (!eventName) return;
+      var payload = Object.assign({
+        pageSlug: window.location.pathname,
+        timestampIso: new Date().toISOString(),
+      }, props || {});
+
+      if (typeof window.plausible === 'function') {
+        window.plausible(eventName, { props: payload });
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      var target = event.target instanceof Element ? event.target.closest('[data-seo-event]') : null;
+      if (!target || target.tagName === 'DETAILS') return;
+      track(target.getAttribute('data-seo-event'), {
+        ctaLabel: target.getAttribute('data-seo-label') || target.textContent?.trim() || undefined,
+        destination: target.getAttribute('data-seo-destination') || target.getAttribute('href') || undefined,
+      });
+    });
+
+    document.addEventListener('toggle', function (event) {
+      var target = event.target;
+      if (!(target instanceof HTMLDetailsElement) || !target.open) return;
+      track(target.getAttribute('data-seo-event'), {
+        ctaLabel: target.getAttribute('data-seo-label') || undefined,
+      });
+    }, true);
+  })();
+</script>

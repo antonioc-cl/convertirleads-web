@@ -1,0 +1,31 @@
+---
+interface LinkItem {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  links?: LinkItem[];
+}
+
+const { links = [] } = Astro.props;
+---
+
+{links.length > 0 && (
+  <nav class="reveal mt-12 border-t border-mist pt-8" aria-label="Páginas relacionadas">
+    <p class="font-mono text-xs tracking-[0.1em] text-stone mb-4">También podría interesarte:</p>
+    <div class="flex flex-wrap gap-4">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm text-ink no-underline transition-colors hover:text-sage-deep"
+          data-seo-event="seo_internal_link_click"
+          data-seo-label={link.label}
+          data-seo-destination={link.href}
+        >
+          {link.label} →
+        </a>
+      ))}
+    </div>
+  </nav>
+)}

@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [
     icon(),
     sitemap({
-      filter: (page) => !page.includes('/blog/') && !page.includes('/gracias/'),
+      filter: (page) => !page.includes('/blog/') && !page.includes('/gracias/') && !page.includes('/agendar/'),
     }),
   ],
   vite: {

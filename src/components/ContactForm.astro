@@ -160,6 +160,17 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAA
           throw new Error(payload.error || 'No pude enviar tu mensaje. Intenta de nuevo en un minuto.');
         }
 
+        if (typeof window.plausible === 'function') {
+          window.plausible('seo_form_submit', {
+            props: {
+              pageSlug: window.location.pathname,
+              pageCluster: 'marca',
+              primaryIntent: 'comercial',
+              timestampIso: new Date().toISOString(),
+            },
+          });
+        }
+
         form.reset();
         if (window.turnstile) {
           window.turnstile.reset();

@@ -3,6 +3,11 @@ import { getCollection, render } from 'astro:content';
 import Landing from '../layouts/Landing.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AeoAnswerBlock from '../components/seo/AeoAnswerBlock.astro';
+import AuthorEntityBox from '../components/seo/AuthorEntityBox.astro';
+import FaqSection from '../components/seo/FaqSection.astro';
+import InternalLinkCluster from '../components/seo/InternalLinkCluster.astro';
+import PrimaryCta from '../components/seo/PrimaryCta.astro';
 
 const slugFromId = (id: string) => id.replace(/\.mdx?$/, '');
 
@@ -18,7 +23,7 @@ const { entry } = Astro.props;
 const slug = slugFromId(entry.id);
 const { Content } = await render(entry);
 
-const { title, description, h1, type, city, region, noindex, answer, faqs, updated } = entry.data;
+const { title, description, h1, type, city, region, noindex, answer, faqs, updated, ctaLabel, ctaHref, internalLinks } = entry.data;
 
 const canonical = `https://convertirleads.cl/${slug}/`;
 
@@ -71,6 +76,16 @@ const faqSchema = faqs?.length ? {
     },
   })),
 } : null;
+
+const defaultInternalLinks = [
+  { href: '/diagnostico-digital/', label: 'Diagnóstico digital' },
+  { href: '/consultoria-marketing-digital/', label: 'Consultoría de marketing' },
+  { href: '/auditoria-seo-aeo/', label: 'Auditoría SEO/AEO' },
+  { href: '/estrategia-digital/', label: 'Estrategia digital' },
+  ...(type !== 'geo' ? [{ href: '/consultor-marketing-digital-chile/', label: 'Consultor de marketing en Chile' }] : []),
+];
+
+const relatedLinks = internalLinks?.length ? internalLinks : defaultInternalLinks;
 ---
 
 <Landing title={title} description={description} canonical={canonical} noindex={Boolean(noindex)}>
@@ -100,75 +115,17 @@ const faqSchema = faqs?.length ? {
         </h1>
       </div>
 
-      {answer && (
-        <aside class="reveal mb-12 max-w-[860px] border-l-4 border-sage bg-paper-warm p-6 md:p-8" aria-label="Respuesta breve">
-          <p class="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-sage-deep">Respuesta breve</p>
-          <p class="text-lg leading-relaxed text-ink md:text-xl">{answer}</p>
-        </aside>
-      )}
+      <AeoAnswerBlock answer={answer} />
 
       <!-- Contenido -->
       <div class="reveal prose-content max-w-[720px]">
         <Content />
       </div>
 
-      {faqs?.length && (
-        <section class="reveal mt-16 max-w-[860px] border-t border-mist pt-10" aria-labelledby="faq-landing">
-          <p class="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-sage-deep">FAQ</p>
-          <h2 id="faq-landing" class="font-serif text-[clamp(30px,4vw,48px)] leading-tight text-ink">Preguntas frecuentes</h2>
-          <div class="mt-6 space-y-0">
-            {faqs.map((faq, index) => (
-              <details class="group border-b border-mist">
-                <summary class="flex cursor-pointer items-start justify-between gap-6 py-5 list-none">
-                  <span class="font-mono text-xs text-sage-deep mt-1">/{String(index + 1).padStart(2, '0')}</span>
-                  <span class="flex-1 font-serif text-xl leading-tight text-ink">{faq.question}</span>
-                  <span class="text-lg text-stone group-open:hidden">+</span>
-                  <span class="hidden text-lg text-stone group-open:block">−</span>
-                </summary>
-                <div class="pb-6 pl-12">
-                  <p class="max-w-[680px] text-base leading-relaxed text-ink-soft md:text-lg">{faq.answer}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <!-- CTA final de landing -->
-      <div class="reveal mt-16 border-t border-mist pt-10">
-        <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:gap-8">
-          <a href="/agendar" class="bg-terracotta px-8 py-5 text-sm font-medium text-ink no-underline transition-colors hover:bg-terracotta-dark">
-            Solicitar diagnóstico →
-          </a>
-          <span class="text-sm text-stone">
-            30 min · sin costo · sin venta
-          </span>
-        </div>
-      </div>
-
-      <!-- Cross-links -->
-      <div class="reveal mt-12 border-t border-mist pt-8">
-        <p class="font-mono text-xs tracking-[0.1em] text-stone mb-4">También podría interesarte:</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="/diagnostico-digital/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
-            Diagnóstico digital →
-          </a>
-          <a href="/consultoria-marketing-digital/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
-            Consultoría de marketing →
-          </a>
-          <a href="/auditoria-seo-aeo/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
-            Auditoría SEO/AEO →
-          </a>
-          <a href="/estrategia-digital/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
-            Estrategia digital →
-          </a>
-          {type !== 'geo' && (
-            <a href="/consultor-marketing-digital-chile/" class="text-sm text-ink no-underline transition-colors hover:text-sage-deep">
-              Consultor de marketing en Chile →
-            </a>
-          )}
-        </div>
-      </div>
+      <AuthorEntityBox />
+      <FaqSection faqs={faqs} />
+      <PrimaryCta label={ctaLabel} href={ctaHref} />
+      <InternalLinkCluster links={relatedLinks} />
     </div>
   </section>
 
