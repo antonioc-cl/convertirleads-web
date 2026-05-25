@@ -14,6 +14,17 @@ faqs:
     answer: "No necesariamente. Puede ayudarte a elegir, coordinar o evaluar agencias para que ejecuten mejor."
   - question: "¿Qué debería contratar primero?"
     answer: "Si no sabes qué está fallando, primero diagnóstico o consultoría. Si ya sabes qué hacer y solo falta volumen, agencia."
+internalLinks:
+  - href: "/checklist-agencia-marketing/"
+    label: "Checklist para evaluar tu agencia"
+  - href: "/por-que-mi-sitio-no-convierte/"
+    label: "Revisar por qué la web no convierte"
+  - href: "/auditoria-seo-aeo/"
+    label: "Revisar SEO/AEO"
+  - href: "/consultoria-marketing-digital/"
+    label: "Consultoría de marketing"
+  - href: "/consultor-marketing-digital-chile/"
+    label: "Consultor de marketing en Chile"
 ---
 
 ## No es que una sea mejor. Es que sirven para momentos distintos.

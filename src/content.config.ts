@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const cases = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/cases' }),
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/cases' }),
   schema: z.object({
     industry: z.string(),
     year: z.string(),
