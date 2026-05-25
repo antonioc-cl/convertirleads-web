@@ -78,6 +78,13 @@ Recibes una priorización clara:
 | Alto impacto | Puede mejorar ranking o leads | nueva página money, mejor title, FAQ/schema |
 | Oportunidad | Construye autoridad con el tiempo | artículos AEO, enlaces internos, menciones externas |
 
+## Inversión
+
+- **Plazo:** 5–7 días hábiles.
+- **Inversión:** desde $1.5 MM CLP según tamaño del sitio, canales activos y complejidad técnica.
+- **Formato:** revisión, hallazgos priorizados y conversión de cierre.
+- **Siguiente paso:** ejecutar internamente, ordenar proveedores o seguir con consultoría.
+
 ## Para quién tiene sentido
 
 Para empresas que ya invirtieron en web, contenido, SEO o pauta y necesitan saber si ese activo puede generar negocio orgánico. También para equipos que quieren preparar su sitio para búsquedas tradicionales y respuestas de IA.

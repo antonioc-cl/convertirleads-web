@@ -49,6 +49,13 @@ No es para quien busca un community manager, una grilla de contenidos o una web 
 | Estrategia digital | Roadmap de qué hacer, en qué orden y con qué métricas | Cuando necesitas dirección antes de ejecutar |
 | Consultoría continua | Acompañamiento mes a mes para revisar, ajustar y decidir | Cuando necesitas criterio externo sostenido |
 
+## Inversión
+
+- **Plazo:** 2–3 semanas para entrega completa.
+- **Inversión:** desde $2.5 MM CLP según alcance, canales involucrados y complejidad del negocio.
+- **Formato:** diagnóstico, estrategia documentada, roadmap y conversión de cierre.
+- **Próximo paso:** ejecución interna, conmigo o con proveedores según lo que tenga más sentido.
+
 ## Cómo partimos
 
 1. **Conversación inicial:** levantamos contexto, inversión actual y dolor principal.

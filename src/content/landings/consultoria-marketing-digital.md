@@ -67,6 +67,13 @@ No soy una agencia full-service. No vendo volumen de posts, horas de diseño ni 
 
 La consultoría sirve cuando quieres una cabeza externa que entienda negocio, marketing y tecnología, y que te ayude a decidir con menos humo.
 
+## Inversión
+
+- **Ritmo:** semanal, quincenal o mensual.
+- **Inversión:** desde $1.8 MM CLP/mes según complejidad, número de canales y nivel de coordinación requerido.
+- **Formato:** sesiones de revisión, priorización y seguimiento de decisiones.
+- **Primer paso:** diagnóstico digital como base.
+
 ## Cómo parte
 
 Normalmente parte con un diagnóstico digital. Sin esa foto inicial, la consultoría puede convertirse en opiniones sueltas.

@@ -21,6 +21,12 @@ faqs:
     answer: "Sí. Puedo revisar lo que hace tu agencia, coordinar prioridades o ayudarte a evaluar si la inversión está conectada con resultados comerciales."
 ---
 
+## Quién es Antonio Correa
+
+<img src="/images/antonio-correa.png" alt="Antonio Correa, consultor de marketing digital en Chile" width="200" height="200" loading="lazy" />
+
+Consultor independiente de marketing digital, basado en Puerto Varas, Región de Los Lagos. Trabajo con empresas que ya invierten en marketing y necesitan diagnóstico, criterio externo y prioridades claras antes de seguir ejecutando campañas, SEO, web o CRM.
+
 ## Cuando todos opinan de marketing, alguien tiene que ordenar la decisión.
 
 En muchas empresas el marketing queda entre agencia, diseñador, desarrollador, equipo comercial y gerencia. Cada parte mira una pieza. Pocas veces alguien mira el sistema completo.
