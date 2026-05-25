@@ -117,6 +117,8 @@ const relatedLinks = internalLinks?.length ? internalLinks : defaultInternalLink
 
       <AeoAnswerBlock answer={answer} />
 
+      <PrimaryCta label={ctaLabel} href={ctaHref} event="seo_cta_above_fold_click" />
+
       <!-- Contenido -->
       <div class="reveal prose-content max-w-[720px]">
         <Content />

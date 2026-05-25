@@ -3,7 +3,7 @@ title: "¿Por qué mi sitio web no convierte? — 5 razones reales"
 description: "Tu sitio se ve bien pero no vende. Estas son las razones más comunes por las que una web no convierte y cómo diagnosticar qué falla primero."
 h1: "¿Por qué mi sitio web no convierte? 5 razones y cómo arreglarlas."
 type: aeo
-updated: 2026-05-21
+updated: 2026-05-25
 answer: "Un sitio web no convierte cuando atrae tráfico equivocado, comunica mal la propuesta de valor, no tiene una acción clara, no genera confianza o no mide el embudo. La solución no es rediseñar de inmediato, sino diagnosticar dónde se rompe la decisión del cliente."
 faqs:
   - question: "¿Qué significa que un sitio web convierta?"
@@ -51,6 +51,16 @@ Si no tienes eventos, conversiones y seguimiento, no sabes si el sitio falla ant
 Puedes tener muchas visitas y pocas oportunidades si atraes personas que nunca comprarían. Esto pasa con campañas mal segmentadas, SEO informativo sin intención comercial o contenido que trae curiosos.
 
 **Cómo arreglarlo:** separa tráfico útil de tráfico vanidoso. Revisa queries, campañas, ubicaciones, dispositivos, formularios y tasa de cierre.
+
+## Tabla diagnóstica: síntoma, causa y qué revisar primero
+
+| Síntoma | Causa probable | Qué revisar primero |
+| --- | --- | --- |
+| Hay visitas pero no leads | Tráfico equivocado o propuesta débil | Fuentes de tráfico, intención, mensaje above the fold |
+| Hay clics en ads pero no formularios | Landing desconectada de la promesa del anuncio | Keyword, anuncio, landing, CTA |
+| Hay formularios pero no ventas | Mala calificación o seguimiento | CRM, tiempos de respuesta, criterios comerciales |
+| Google trae tráfico irrelevante | Intención SEO mal trabajada | Queries en Search Console |
+| Usuarios abandonan rápido | Página lenta, confusa o sin foco | Analytics, grabaciones, UX, copy |
 
 ## Checklist rápido
 

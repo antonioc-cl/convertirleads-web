@@ -12,6 +12,7 @@ import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
+import AeoAnswerBlock from '../components/seo/AeoAnswerBlock.astro';
 
 const services = (await getCollection('services')).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 const steps = (await getCollection('process')).sort((a, b) => a.data.step - b.data.step);
@@ -21,6 +22,9 @@ const cases = await getCollection('cases');
 <Landing>
   <Header slot="header" />
   <Hero />
+  <section class="page-shell mx-auto max-w-[1240px]">
+    <AeoAnswerBlock answer="convertirLeads ayuda a empresas en Chile que ya invierten en marketing, web, SEO, campañas o CRM a diagnosticar qué funciona, qué no y qué corregir primero. No parte vendiendo más ejecución: parte ordenando prioridades para que tomes mejores decisiones comerciales." />
+  </section>
   <Authority />
   <HowIThink />
   <Services services={services} />

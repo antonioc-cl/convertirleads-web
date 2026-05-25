@@ -3,7 +3,7 @@ title: "Consultoría de marketing digital en Chile — convertirLeads"
 description: "Consultoría de marketing digital para empresas que necesitan criterio externo, prioridades claras y revisión de proveedores, campañas, web, SEO/AEO y CRM."
 h1: "Consultoría de marketing para dejar de invertir a ciegas."
 type: service
-updated: 2026-05-21
+updated: 2026-05-25
 answer: "La consultoría de marketing digital es acompañamiento estratégico para decidir qué hacer, qué medir, qué corregir y qué no seguir financiando. A diferencia del diagnóstico, que entrega una foto inicial, la consultoría ayuda a sostener mejores decisiones mes a mes."
 faqs:
   - question: "¿En qué se diferencia de una estrategia digital?"
@@ -38,6 +38,15 @@ Conviene cuando ya hay inversión y movimiento, pero falta dirección:
 - tienes tráfico, pero pocos leads calificados;
 - el CRM existe, pero el seguimiento comercial es débil;
 - necesitas priorizar sin depender del discurso de una agencia.
+
+## Consultoría vs diagnóstico vs agencia vs equipo interno
+
+| Opción | Sirve cuando | Riesgo |
+| --- | --- | --- |
+| Agencia | Ya sabes qué ejecutar y necesitas capacidad operativa | Ejecutar sin estrategia clara |
+| Consultor | Necesitas criterio, diagnóstico y priorización | No reemplaza a todo un equipo de ejecución |
+| Equipo interno | Tienes volumen suficiente para sostener operación | Puede perder mirada externa |
+| Diagnóstico puntual | Necesitas claridad antes de decidir | No acompaña ejecución mensual |
 
 ## Qué hacemos mes a mes
 

@@ -1,11 +1,11 @@
 ---
-title: "Diagnóstico de marketing digital para empresas que ya invierten | convertirLeads"
+title: "Diagnóstico de marketing digital en Chile — convertirLeads"
 description: "Diagnóstico digital para empresas en Chile que ya invierten en web, ads, SEO o CRM y necesitan saber qué funciona, qué no y qué corregir primero."
 h1: "Diagnóstico digital para saber qué corregir primero"
 type: service
-updated: 2026-05-22
+updated: 2026-05-25
 answer: "Un diagnóstico digital revisa tu web, campañas, SEO, medición, CRM y seguimiento comercial para identificar dónde se está perdiendo inversión y qué conviene corregir primero. No es un reporte genérico: es una priorización de decisiones para empresas que ya están gastando en marketing y necesitan claridad antes de seguir invirtiendo."
-ctaLabel: "Agenda un diagnóstico digital →"
+ctaLabel: "Solicitar diagnóstico digital →"
 ctaHref: "/agendar/"
 internalLinks:
   - href: "/por-que-mi-sitio-no-convierte/"
@@ -69,7 +69,15 @@ Antes de invertir más, revisa esto:
 7. ¿El CRM muestra qué pasa después del lead?
 8. ¿Hay una persona responsable de priorizar entre web, ads, SEO y ventas?
 
-Si varias respuestas son “no”, probablemente no falta una táctica. Falta claridad.
+Si varias respuestas son "no", probablemente no falta una táctica. Falta claridad.
+
+## Diferencia entre diagnóstico digital, auditoría SEO y consultoría
+
+| Servicio | Para qué sirve | Cuándo usarlo |
+| --- | --- | --- |
+| Diagnóstico digital | Saber qué corregir primero en marketing, web, ads, SEO, CRM y proveedores | Cuando estás gastando sin claridad |
+| Auditoría SEO/AEO | Revisar si tu sitio puede ser encontrado, citado y elegido | Cuando el problema principal es visibilidad orgánica |
+| Consultoría continua | Acompañar decisiones mes a mes | Cuando necesitas criterio externo sostenido |
 
 ## Qué entrego
 
@@ -94,7 +102,7 @@ Entrego:
 
 ## Mini caso anonimizado
 
-Una empresa llega diciendo: “la web no convierte, queremos rediseñarla”.
+Una empresa llega diciendo: "la web no convierte, queremos rediseñarla".
 
 Al revisar, la web tenía problemas, pero no era lo primero. El tracking medía mal las conversiones, Google Ads mezclaba búsquedas branded con genéricas, no había negativas suficientes y los formularios no se respondían con un proceso claro.
 
@@ -106,7 +114,7 @@ Ese es el punto del diagnóstico: evitar gastar en la solución equivocada.
 
 | Buen fit | Mal fit |
 | --- | --- |
-| Ya inviertes en web, ads, SEO, CRM o proveedores | Buscas solo “más seguidores” |
+| Ya inviertes en web, ads, SEO, CRM o proveedores | Buscas solo "más seguidores" |
 | Tienes datos, campañas o activos para revisar | No tienes presupuesto para corregir hallazgos |
 | Quieres decidir qué pausar, corregir o escalar | Quieres una opinión rápida sin contexto |
 | La inversión actual tiene consecuencias económicas | Solo buscas una web bonita o un logo |
@@ -114,7 +122,7 @@ Ese es el punto del diagnóstico: evitar gastar en la solución equivocada.
 
 ## Inversión y plazo
 
-- **Plazo:** 7–10 días hábiles.
+- **Plazo:** 7-10 días hábiles.
 - **Inversión:** desde $2MM CLP según alcance y activos a revisar.
 - **Formato:** revisión, hallazgos, prioridades y conversación de cierre.
 - **Siguiente paso:** si avanzamos a consultoría o ejecución, el diagnóstico se usa como base del roadmap.

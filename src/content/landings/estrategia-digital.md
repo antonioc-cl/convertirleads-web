@@ -3,7 +3,7 @@ title: "Estrategia digital para empresas en Chile — convertirLeads"
 description: "Estrategia digital para empresas que ya gastan en marketing y necesitan convertir diagnóstico en prioridades, roadmap y mejores decisiones comerciales."
 h1: "Estrategia digital que parte por diagnóstico, no por ocurrencias."
 type: service
-updated: 2026-05-21
+updated: 2026-05-25
 answer: "Una estrategia digital define qué vender, a quién, con qué mensaje, por qué canales, con qué métricas y en qué orden. Para empresas que ya invierten en marketing, debería partir con diagnóstico: sin entender qué falla hoy, la estrategia se vuelve una lista de acciones sin criterio."
 faqs:
   - question: "¿Qué incluye una estrategia digital?"
@@ -40,6 +40,14 @@ También para dueños o gerencias que necesitan entender si lo que hacen sus pro
 ## Para quién no es
 
 No es para quien busca un community manager, una grilla de contenidos o una web bonita sin revisar el negocio. Si eso es lo que necesitas, probablemente hay mejores proveedores.
+
+## Diferencia entre diagnóstico, estrategia y consultoría
+
+| Servicio | Qué entrega | Cuándo usarlo |
+| --- | --- | --- |
+| Diagnóstico digital | Foto actual de qué funciona, qué no y qué corregir primero | Cuando estás gastando sin claridad |
+| Estrategia digital | Roadmap de qué hacer, en qué orden y con qué métricas | Cuando necesitas dirección antes de ejecutar |
+| Consultoría continua | Acompañamiento mes a mes para revisar, ajustar y decidir | Cuando necesitas criterio externo sostenido |
 
 ## Cómo partimos
 
