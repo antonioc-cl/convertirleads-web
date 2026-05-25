@@ -1,0 +1,13 @@
+---
+interface Props {
+  answer?: string;
+}
+
+const { answer } = Astro.props;
+---
+
+{answer && (
+  <p class="reveal landing-lead">
+    {answer}
+  </p>
+)}

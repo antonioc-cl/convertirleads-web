@@ -1,21 +1,38 @@
 ---
+interface Props {
+  showImage?: boolean;
+}
+
+const { showImage = true } = Astro.props;
 ---
 
-<aside class="reveal mt-16 max-w-[860px] border border-mist bg-paper-warm p-6 md:p-8" aria-label="Autoría y criterio">
-  <p class="mb-3 font-mono text-xs uppercase tracking-[0.14em] text-sage-deep">Quién revisa</p>
-  <h2 class="font-serif text-2xl leading-tight text-ink md:text-3xl">Antonio Correa · convertirLeads</h2>
-  <p class="mt-4 max-w-[680px] text-base leading-relaxed text-ink-soft md:text-lg">
-    Consultor de marketing y estratega digital desde Puerto Varas. Trabajo con empresas que ya invierten en marketing, web, ads, SEO o CRM y necesitan distinguir actividad de decisiones útiles.
-  </p>
-  <a
-    href="https://www.linkedin.com/in/antoniocorreas/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="mt-5 inline-flex text-sm text-sage-deep no-underline hover:text-ink"
-    data-seo-event="seo_internal_link_click"
-    data-seo-label="LinkedIn Antonio Correa"
-    data-seo-destination="https://www.linkedin.com/in/antoniocorreas/"
-  >
-    Ver LinkedIn →
-  </a>
+<aside class:list={["reveal", "author-card", !showImage && "author-card--no-image"]} aria-label="Autoría y criterio">
+  {showImage && (
+    <div class="author-card__media">
+      <img
+        src="/images/antonio-correa.png"
+        alt="Antonio Correa, consultor de marketing digital en Chile"
+        width="220"
+        height="220"
+        loading="lazy"
+      />
+    </div>
+  )}
+  <div class="author-card__content">
+    <p class="author-card__eyebrow">Quién revisa</p>
+    <h2>Antonio Correa · ConvertirLeads</h2>
+    <p>
+      Consultor de marketing y estratega digital desde Puerto Varas. Trabajo con empresas que ya invierten en marketing, web, ads, SEO o CRM y necesitan separar actividad de decisiones útiles.
+    </p>
+    <a
+      href="https://www.linkedin.com/in/antoniocorreas/"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-seo-event="seo_internal_link_click"
+      data-seo-label="LinkedIn Antonio Correa"
+      data-seo-destination="https://www.linkedin.com/in/antoniocorreas/"
+    >
+      Ver LinkedIn →
+    </a>
+  </div>
 </aside>

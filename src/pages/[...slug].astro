@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import Landing from '../layouts/Landing.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import AeoAnswerBlock from '../components/seo/AeoAnswerBlock.astro';
+import LandingLead from '../components/seo/LandingLead.astro';
 import AuthorEntityBox from '../components/seo/AuthorEntityBox.astro';
 import FaqSection from '../components/seo/FaqSection.astro';
 import InternalLinkCluster from '../components/seo/InternalLinkCluster.astro';
@@ -115,16 +115,16 @@ const relatedLinks = internalLinks?.length ? internalLinks : defaultInternalLink
         </h1>
       </div>
 
-      <AeoAnswerBlock answer={answer} />
+      <LandingLead answer={answer} />
 
       <PrimaryCta label={ctaLabel} href={ctaHref} event="seo_cta_above_fold_click" />
 
       <!-- Contenido -->
-      <div class="reveal prose-content max-w-[720px]">
+      <div class="reveal prose-content max-w-[1080px]">
         <Content />
       </div>
 
-      <AuthorEntityBox />
+      <AuthorEntityBox showImage={slug !== 'consultor-marketing-digital-chile'} />
       <FaqSection faqs={faqs} />
       <PrimaryCta label={ctaLabel} href={ctaHref} />
       <InternalLinkCluster links={relatedLinks} />
